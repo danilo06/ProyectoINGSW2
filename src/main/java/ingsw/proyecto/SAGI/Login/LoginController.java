@@ -1,4 +1,4 @@
-package Login;
+package ingsw.proyecto.SAGI.Login;
 
 import java.net.URL;
 import java.util.ResourceBundle;

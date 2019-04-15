@@ -1,4 +1,4 @@
-package Login;
+package ingsw.proyecto.SAGI.Login;
 
 import java.io.IOException;
 import java.net.URL;

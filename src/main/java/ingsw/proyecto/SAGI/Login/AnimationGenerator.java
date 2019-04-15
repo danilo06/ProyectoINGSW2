@@ -1,4 +1,4 @@
-package Login;
+package ingsw.proyecto.SAGI.Login;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
