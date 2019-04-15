@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import ingsw.proyecto.SAGI.Main;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -49,16 +51,16 @@ public class PantallaCargaController implements Initializable {
 		parent.setOnMouseDragged(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				Launch.stage.setX(event.getScreenX() - xOffset);
-				Launch.stage.setY(event.getScreenY() - yOffset);
-				Launch.stage.setOpacity(0.7f);
+				Main.stage.setX(event.getScreenX() - xOffset);
+				Main.stage.setY(event.getScreenY() - yOffset);
+				Main.stage.setOpacity(0.7f);
 			}
 		});
 		parent.setOnDragDone((e) -> {
-			Launch.stage.setOpacity(1.0f);
+			Main.stage.setOpacity(1.0f);
 		});
 		parent.setOnMouseReleased((e) -> {
-			Launch.stage.setOpacity(1.0f);
+			Main.stage.setOpacity(1.0f);
 		});
 	}
 

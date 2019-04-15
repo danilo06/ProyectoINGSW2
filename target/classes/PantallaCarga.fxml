@@ -35,7 +35,7 @@
       </Label>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="581.0" layoutY="300.0" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@mansion.png" />
+            <Image url="@img/mansion.png" />
          </image>
       </ImageView>
     </children>

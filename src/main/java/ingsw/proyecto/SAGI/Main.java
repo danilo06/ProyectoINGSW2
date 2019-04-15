@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ingsw.proyecto.SAGI.Login;
+package ingsw.proyecto.SAGI;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
-public class Launch extends Application {
+public class Main extends Application {
 
     public static Stage stage = null;
 
