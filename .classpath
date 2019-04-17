@@ -24,7 +24,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Danilo/Desktop/Proyecto_software/fontawesomefx-8.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Danilo/Desktop/Proyecto_software/jfoenix.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Danilo/git/ProyectoINGSW2/src/main/resources/library/fontawesomefx-8.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Danilo/git/ProyectoINGSW2/src/main/resources/library/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="src" path="java"/>
+	<classpathentry kind="lib" path="C:/Users/Danilo/git/ProyectoINGSW2/src/main/resources/library/gradle-wrapper.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
