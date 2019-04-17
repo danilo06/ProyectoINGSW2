@@ -26,7 +26,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
-public class Controller implements Initializable {
+public class MenuController implements Initializable {
 	
 	@FXML
     private Button btnResidentes;
