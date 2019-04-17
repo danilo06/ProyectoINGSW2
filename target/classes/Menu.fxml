@@ -23,11 +23,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ingsw.proyecto.SAGI.controllerView.MenuController">
    <children>
-      <VBox prefHeight="727.0" prefWidth="318.0" style="-fx-background-color: #092489;">
+      <VBox prefHeight="727.0" prefWidth="255.0" style="-fx-background-color: #092489;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Pane prefHeight="137.0" prefWidth="318.0" style="-fx-background-color: #050472;">
+                  <Pane prefHeight="137.0" prefWidth="255.0" style="-fx-background-color: #050472;">
                      <children>
                         <FontAwesomeIconView fill="WHITE" glyphName="XING_SQUARE" layoutX="80.0" layoutY="86.0" size="50" text="" wrappingWidth="44.428571701049805" />
                         <Label layoutX="125.0" layoutY="31.0" text="SAGI" textFill="WHITE">
@@ -302,7 +302,7 @@
             </StackPane>
          </children>
       </VBox>
-      <Pane fx:id="pnlStatus" layoutX="317.0" layoutY="64.0" prefHeight="137.0" prefWidth="963.0" style="-fx-background-color: #4E91D6;">
+      <Pane fx:id="pnlStatus" layoutX="254.0" layoutY="64.0" prefHeight="137.0" prefWidth="1026.0" style="-fx-background-color: #4E91D6;" AnchorPane.leftAnchor="254.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label fx:id="lblStatus" layoutX="43.0" layoutY="69.0" text="Residentes" textFill="WHITE">
                <font>
@@ -316,11 +316,12 @@
             </Label>
          </children>
       </Pane>
-      <FontAwesomeIconView fx:id="btnClose" fill="#cd1c1c" glyphName="CLOSE" layoutX="1260.0" layoutY="25.0" onMouseClicked="#handleClose" size="20" />
+      <FontAwesomeIconView fx:id="btnClose" fill="#cd1c1c" glyphName="CLOSE" layoutX="1260.0" layoutY="25.0" onMouseClicked="#handleClose" size="20" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="7.0" />
       <Label layoutX="323.0" layoutY="10.0" prefHeight="21.0" prefWidth="176.0" text="Gestión Inmobiliaria" textFill="#726d6d">
          <font>
             <Font name="Eras Demi ITC" size="13.0" />
          </font>
       </Label>
+      <FontAwesomeIconView fx:id="btnExpand" fill="#cd1c1c" glyphName="EXPAND" layoutX="1234.0" layoutY="24.0" onMouseClicked="#handleExpand" size="20" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="7.0" />
    </children>
 </AnchorPane>
