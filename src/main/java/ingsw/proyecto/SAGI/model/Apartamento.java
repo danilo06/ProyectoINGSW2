@@ -116,6 +116,15 @@ public class Apartamento {
 		this.residentes = residentes;
 	}
 
+	@Override
+	public String toString() {
+		return "Apartamento [idApartamento=" + idApartamento + ", idTorre=" + idTorre + ", idPropietario="
+				+ idPropietario + ", idResidenteACargo=" + idResidenteACargo + ", cantResidente=" + cantResidente
+				+ ", residentes=" + residentes + "]";
+	}
+
+
+
 	public static class ApartamentoBuilder implements IBuilder<Apartamento> {
 
 		private String idApartamento;
