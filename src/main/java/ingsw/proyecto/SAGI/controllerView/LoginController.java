@@ -12,9 +12,9 @@ public class LoginController implements Initializable {
 
     @FXML
     private AnchorPane parent;
-
+    
     @FXML
-    void close_app(MouseEvent event) {
+    void close_app(MouseEvent event) { 
     	System.exit(0);
     }
 
