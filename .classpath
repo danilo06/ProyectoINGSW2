@@ -25,14 +25,14 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/elneg/git/ProyectoINGSW2/src/main/resources/library/fontawesomefx-8.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/elneg/git/ProyectoINGSW2/src/main/resources/library/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="src" path="java"/>
-	<classpathentry kind="lib" path="C:/Users/elneg/git/ProyectoINGSW2/src/main/resources/library/gradle-wrapper.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="src/main/resources/library/fontawesomefx-8.9.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/library/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/library/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
