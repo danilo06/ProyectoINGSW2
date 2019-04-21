@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * 
  */
-public class Torre extends UnidadResidencial {
+public class Torre extends IUnidadResidencial {
 
     /**
      * Default constructor

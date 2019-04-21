@@ -22,7 +22,7 @@ public class Empleado extends Persona {
     /**
      * 
      */
-    //private void horario;
+    private Date horario;
 
     /**
      * 

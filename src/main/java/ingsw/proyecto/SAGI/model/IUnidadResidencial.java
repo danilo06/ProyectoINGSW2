@@ -6,13 +6,14 @@ import java.util.*;
 /**
  * 
  */
-public class UnidadResidencial {
+public class IUnidadResidencial {
 
     /**
      * Default constructor
      */
-    public UnidadResidencial() {
+    public IUnidadResidencial() {
     }
+
 
 
 }

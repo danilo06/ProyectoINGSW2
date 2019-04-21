@@ -27,7 +27,7 @@ public class ZonaResidencial {
     /**
      * 
      */
-    private List<UnidadResidencial> unidadResiencial;
+    private List<IUnidadResidencial> unidadResiencial;
 
     /**
      * 
@@ -42,7 +42,12 @@ public class ZonaResidencial {
     /**
      * 
      */
-    private List<Parqueadero> parqueadero;
+    private Parqueadero parqueadero;
+
+    /**
+     * 
+     */
+    private List<Visitante> visitante;
 
 
 

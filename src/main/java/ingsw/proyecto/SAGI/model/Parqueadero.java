@@ -17,32 +17,8 @@ public class Parqueadero {
     /**
      * 
      */
-    private String idParqueadero;
+    private List<UnidadVehicular> parqueadero;
 
-    /**
-     * 
-     */
-    private String estado;
-
-    /**
-     * 
-     */
-    private String idPersonaAsignada;
-
-    /**
-     * 
-     */
-    private String placaVehiculo;
-
-    /**
-     * 
-     */
-    private Date fechaIngreso;
-
-    /**
-     * 
-     */
-    private Date fechaRetiro;
 
 
 }
