@@ -18,6 +18,10 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -87,10 +91,28 @@ public class MenuController implements Initializable {
 
 	@FXML
 	private GridPane pnCerrarSesion;
+	
+	@FXML
+    private BarChart<?, ?> PoblaciónConjuntoResidencial;
+
+    @FXML
+    private CategoryAxis lblEdad;
+
+    @FXML
+    private NumberAxis lblPersonas;
+
 
 	private boolean fullScreen = false;
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		XYChart.Series setl = new XYChart.Series<>();
+		
+		setl.getData().add(new XYChart.Data("Niños",0-14));
+		setl.getData().add(new XYChart.Data("Jovenes",15-24));
+		setl.getData().add(new XYChart.Data("Adultos",25-49));
+		setl.getData().add(new XYChart.Data("Adultos Mayores",50-80));
+		
+		PoblaciónConjuntoResidencial.getData().addAll(setl);
 		// TODO Auto-generated method stub
 
 	}
