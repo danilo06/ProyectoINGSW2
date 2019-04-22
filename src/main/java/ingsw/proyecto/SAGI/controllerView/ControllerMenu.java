@@ -1,26 +1,12 @@
 package ingsw.proyecto.SAGI.controllerView;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import animatefx.animation.BounceIn;
 import animatefx.animation.FadeIn;
-import animatefx.animation.Flash;
-import animatefx.animation.Jello;
-import animatefx.animation.Pulse;
-import animatefx.animation.Swing;
-import animatefx.animation.Tada;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
@@ -28,99 +14,75 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ControllerMenu implements Initializable {
+public class ControllerMenu implements Initializable{
 
-	@FXML
-	private Button btnResidentes;
+    @FXML
+    private Button btnResidentes;
 
-	@FXML
-	private Button btnVisitantes;
+    @FXML
+    private Button btnVisitantes;
 
-	@FXML
-	private Button btnPersonal;
+    @FXML
+    private Button btnPersonal;
 
-	@FXML
-	private Button btnAdministracion;
+    @FXML
+    private Button btnAdministracion;
 
-	@FXML
-	private Button btanParqueaderos;
+    @FXML
+    private Button btanParqueaderos;
 
-	@FXML
-	private Button btnConfiguracion;
+    @FXML
+    private Button btnConfiguracion;
 
-	@FXML
-	private Button btnCerrarSesion;
+    @FXML
+    private Button btnCerrarSesion;
 
-	@FXML
-	private Pane pnlStatus;
+    @FXML
+    private GridPane pnResidentes;
 
-	@FXML
-	private Label lblStatus;
+    @FXML
+    private Pane pnlStatus;
 
-	@FXML
-	private Label lblStatusMin;
+    @FXML
+    private Label lblStatus;
 
-	@FXML
-	private FontAwesomeIconView btnClose;
+    @FXML
+    private Label lblStatusMin;
 
-	@FXML
-	private FontAwesomeIconView btnExpand;
+    @FXML
+    private FontAwesomeIconView btnClose;
 
-	@FXML
-	private GridPane pnResidentes;
+    @FXML
+    private FontAwesomeIconView btnExpand;
 
-	@FXML
-	private GridPane pnVisitantes;
+    @FXML
+    private GridPane pnResidentes1;
 
-	@FXML
-	private GridPane pnPersonal;
+    @FXML
+    private GridPane pnResidentes2;
 
-	@FXML
-	private GridPane pnAdministracion;
+    @FXML
+    private GridPane pnResidentes21;
 
-	@FXML
-	private GridPane pnParqueaderos;
+    @FXML
+    private GridPane pnResidentes3;
 
-	@FXML
-	private GridPane pnConfiguracion;
+    @FXML
+    private BarChart<?, ?> PoblaciónConjuntoResidencial;
 
-	@FXML
-	private GridPane pnCerrarSesion;
+    @FXML
+    private CategoryAxis lblEdad;
 
-	@FXML
-	private BarChart<?, ?> PoblaciónConjuntoResidencial;
+    @FXML
+    private NumberAxis lblPersonas;
+    
+    private boolean fullScreen = false;
 
-	@FXML
-	private CategoryAxis lblEdad;
-
-	@FXML
-	private NumberAxis lblPersonas;
-
-	private boolean fullScreen = false;
-
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		animated();
-		XYChart.Series setl = new XYChart.Series<>();
-
-		setl.getData().add(new XYChart.Data("Niños", 0 - 14));
-		setl.getData().add(new XYChart.Data("Jovenes", 15 - 24));
-		setl.getData().add(new XYChart.Data("Adultos", 25 - 49));
-		setl.getData().add(new XYChart.Data("Adultos Mayores", 50 - 80));
-
-		PoblaciónConjuntoResidencial.getData().addAll(setl);
-		// TODO Auto-generated method stub
-
-	}
-
-	@FXML
+    @FXML
 	private void handleClicks(ActionEvent event) {
 		ChangeScenes change = new ChangeScenes();
 		if (event.getSource() == btnResidentes) {
@@ -164,4 +126,20 @@ public class ControllerMenu implements Initializable {
 	private void animated() {
 		new FadeIn(pnlStatus).play();
 	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		animated();
+		XYChart.Series setl = new XYChart.Series<>();
+
+		setl.getData().add(new XYChart.Data("Niños", 0 - 14));
+		setl.getData().add(new XYChart.Data("Jovenes", 15 - 24));
+		setl.getData().add(new XYChart.Data("Adultos", 25 - 49));
+		setl.getData().add(new XYChart.Data("Adultos Mayores", 50 - 80));
+
+		PoblaciónConjuntoResidencial.getData().addAll(setl);
+		// TODO Auto-generated method stub
+		
+	}
+
 }
