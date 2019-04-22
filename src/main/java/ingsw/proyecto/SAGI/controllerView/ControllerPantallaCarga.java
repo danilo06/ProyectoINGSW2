@@ -15,7 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class PantallaCargaController implements Initializable {
+public class ControllerPantallaCarga implements Initializable {
 
 	private double xOffset = 0;
 	private double yOffset = 0;
@@ -36,7 +36,7 @@ public class PantallaCargaController implements Initializable {
 				});
 			});
 		} catch (IOException ex) {
-			Logger.getLogger(PantallaCargaController.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ControllerPantallaCarga.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 

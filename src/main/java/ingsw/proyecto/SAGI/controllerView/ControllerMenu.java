@@ -1,7 +1,10 @@
 package ingsw.proyecto.SAGI.controllerView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import animatefx.animation.BounceIn;
 import animatefx.animation.FadeIn;
@@ -33,7 +36,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class MenuController implements Initializable {
+public class ControllerMenu implements Initializable {
 
 	@FXML
 	private Button btnResidentes;
@@ -91,27 +94,27 @@ public class MenuController implements Initializable {
 
 	@FXML
 	private GridPane pnCerrarSesion;
-	
+
 	@FXML
-    private BarChart<?, ?> PoblaciónConjuntoResidencial;
+	private BarChart<?, ?> PoblaciónConjuntoResidencial;
 
-    @FXML
-    private CategoryAxis lblEdad;
+	@FXML
+	private CategoryAxis lblEdad;
 
-    @FXML
-    private NumberAxis lblPersonas;
-
+	@FXML
+	private NumberAxis lblPersonas;
 
 	private boolean fullScreen = false;
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		animated();
 		XYChart.Series setl = new XYChart.Series<>();
-		
-		setl.getData().add(new XYChart.Data("Niños",0-14));
-		setl.getData().add(new XYChart.Data("Jovenes",15-24));
-		setl.getData().add(new XYChart.Data("Adultos",25-49));
-		setl.getData().add(new XYChart.Data("Adultos Mayores",50-80));
-		
+
+		setl.getData().add(new XYChart.Data("Niños", 0 - 14));
+		setl.getData().add(new XYChart.Data("Jovenes", 15 - 24));
+		setl.getData().add(new XYChart.Data("Adultos", 25 - 49));
+		setl.getData().add(new XYChart.Data("Adultos Mayores", 50 - 80));
+
 		PoblaciónConjuntoResidencial.getData().addAll(setl);
 		// TODO Auto-generated method stub
 
@@ -119,69 +122,21 @@ public class MenuController implements Initializable {
 
 	@FXML
 	private void handleClicks(ActionEvent event) {
+		ChangeScenes change = new ChangeScenes();
 		if (event.getSource() == btnResidentes) {
-			lblStatusMin.setText("/home/Residentes");
-			lblStatus.setText("Residentes");
-			pnlStatus.setBackground(
-					new Background(new BackgroundFill(Color.rgb(78, 145, 214), CornerRadii.EMPTY, Insets.EMPTY)));
-			pnResidentes.toFront();
-			// animate the status panel
-			new FadeIn(pnlStatus).play();
+			animated();
 		} else if (event.getSource() == btnVisitantes) {
-			lblStatusMin.setText("/home/Visitantes");
-			lblStatus.setText("Visitantes");
-			pnlStatus.setBackground(
-					new Background(new BackgroundFill(Color.rgb(43, 63, 99), CornerRadii.EMPTY, Insets.EMPTY)));
-			pnVisitantes.toFront();
-			// animate the status panel
-			new Jello(pnlStatus).play();
-
+			change.changeScenes("/Visitante.fxml", btnVisitantes);
 		} else if (event.getSource() == btnPersonal) {
-			lblStatusMin.setText("/home/Personal");
-			lblStatus.setText("Personal");
-			pnlStatus.setBackground(
-					new Background(new BackgroundFill(Color.rgb(43, 99, 63), CornerRadii.EMPTY, Insets.EMPTY)));
-			pnPersonal.toFront();
-			// animate the status panel
-			new BounceIn(pnlStatus).play();
-
+			change.changeScenes("/Personal.fxml", btnVisitantes);
 		} else if (event.getSource() == btnAdministracion) {
-			lblStatusMin.setText("/home/Administración");
-			lblStatus.setText("Administración");
-			pnlStatus.setBackground(
-					new Background(new BackgroundFill(Color.rgb(99, 43, 63), CornerRadii.EMPTY, Insets.EMPTY)));
-			pnAdministracion.toFront();
-			// animate the status panel
-			new Flash(pnlStatus).play();
-
+			change.changeScenes("/Administracion.fxml", btnVisitantes);
 		} else if (event.getSource() == btanParqueaderos) {
-			lblStatusMin.setText("/home/Parqueaderos");
-			lblStatus.setText("Parqueaderos");
-			pnlStatus.setBackground(
-					new Background(new BackgroundFill(Color.rgb(25, 145, 56), CornerRadii.EMPTY, Insets.EMPTY)));
-			pnParqueaderos.toFront();
-			// animate the status panel
-			new Pulse(pnlStatus).play();
-
+			change.changeScenes("/Parqueadero.fxml", btnVisitantes);
 		} else if (event.getSource() == btnConfiguracion) {
-			lblStatusMin.setText("/home/Configuración");
-			lblStatus.setText("Configuración");
-			pnlStatus.setBackground(
-					new Background(new BackgroundFill(Color.rgb(150, 156, 22), CornerRadii.EMPTY, Insets.EMPTY)));
-			pnConfiguracion.toFront();
-			// animate the status panel
-			new Swing(pnlStatus).play();
-
-		}
-		if (event.getSource() == btnCerrarSesion) {
-			lblStatusMin.setText("/home/CerrarSesión");
-			lblStatus.setText("Cerrar Sesión");
-			pnlStatus.setBackground(
-					new Background(new BackgroundFill(Color.rgb(156, 22, 57), CornerRadii.EMPTY, Insets.EMPTY)));
-			pnCerrarSesion.toFront();
-			// animate the status panel
-			new Tada(pnlStatus).play();
-
+			change.changeScenes("/Configuracion.fxml", btnVisitantes);
+		} else if (event.getSource() == btnCerrarSesion) {
+			change.changeScenes("/CerrarSesion.fxml", btnVisitantes);
 		}
 	}
 
@@ -191,7 +146,7 @@ public class MenuController implements Initializable {
 			System.exit(0);
 		}
 	}
-
+	
 	@FXML
 	void handleExpand(MouseEvent event) {
 		if (event.getSource() == btnExpand) {
@@ -204,5 +159,9 @@ public class MenuController implements Initializable {
 				fullScreen = false;
 			}
 		}
+	}
+	
+	private void animated() {
+		new FadeIn(pnlStatus).play();
 	}
 }

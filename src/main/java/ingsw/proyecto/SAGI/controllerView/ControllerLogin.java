@@ -8,7 +8,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.Initializable;
 
-public class LoginController implements Initializable {
+public class ControllerLogin implements Initializable {
 
     @FXML
     private AnchorPane parent;
