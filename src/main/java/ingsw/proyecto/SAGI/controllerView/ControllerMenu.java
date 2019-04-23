@@ -195,7 +195,6 @@ public class ControllerMenu implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		animated();
-
 		changePanel(panel2);
 		changePanel(panel3);
 		changePanel(panel4);
