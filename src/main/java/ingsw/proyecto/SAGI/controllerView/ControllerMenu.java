@@ -14,75 +14,91 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class ControllerMenu implements Initializable{
+public class ControllerMenu implements Initializable {
 
-    @FXML
-    private Button btnResidentes;
+	@FXML
+	private Button btnResidentes;
 
-    @FXML
-    private Button btnVisitantes;
+	@FXML
+	private Button btnVisitantes;
 
-    @FXML
-    private Button btnPersonal;
+	@FXML
+	private Button btnPersonal;
 
-    @FXML
-    private Button btnAdministracion;
+	@FXML
+	private Button btnAdministracion;
 
-    @FXML
-    private Button btanParqueaderos;
+	@FXML
+	private Button btanParqueaderos;
 
-    @FXML
-    private Button btnConfiguracion;
+	@FXML
+	private Button btnConfiguracion;
 
-    @FXML
-    private Button btnCerrarSesion;
+	@FXML
+	private Button btnCerrarSesion;
 
-    @FXML
-    private GridPane pnResidentes;
+	@FXML
+	private Pane pnlStatus;
 
-    @FXML
-    private Pane pnlStatus;
+	@FXML
+	private Label lblStatus;
 
-    @FXML
-    private Label lblStatus;
+	@FXML
+	private Label lblStatusMin;
 
-    @FXML
-    private Label lblStatusMin;
+	@FXML
+	private Button btnPanel1BuscarResidente;
 
-    @FXML
-    private FontAwesomeIconView btnClose;
+	@FXML
+	private Button btnPanel1AgregarResidente;
 
-    @FXML
-    private FontAwesomeIconView btnExpand;
+	@FXML
+	private Button btnPanel4Generar;
 
-    @FXML
-    private GridPane pnResidentes1;
+	@FXML
+	private Button btnPanel1Reporte;
 
-    @FXML
-    private GridPane pnResidentes2;
+	@FXML
+	private Button btnPanel1PoblacionResidentes;
 
-    @FXML
-    private GridPane pnResidentes21;
+	@FXML
+	private FontAwesomeIconView btnClose;
 
-    @FXML
-    private GridPane pnResidentes3;
+	@FXML
+	private FontAwesomeIconView btnExpand;
 
-    @FXML
-    private BarChart<?, ?> PoblaciónConjuntoResidencial;
+	@FXML
+	private AnchorPane panel4;
 
-    @FXML
-    private CategoryAxis lblEdad;
+	@FXML
+	private BarChart<?, ?> PoblaciónConjuntoResidencial;
 
-    @FXML
-    private NumberAxis lblPersonas;
-    
-    private boolean fullScreen = false;
+	@FXML
+	private CategoryAxis lblEdad;
 
-    @FXML
+	@FXML
+	private NumberAxis lblPersonas;
+
+	@FXML
+	private AnchorPane panel1;
+
+	@FXML
+	private Button btnPanel1GenerarReporte;
+
+	@FXML
+	private AnchorPane panel2;
+
+	@FXML
+	private AnchorPane panel3;
+
+	private boolean fullScreen = false;
+
+	@FXML
 	private void handleClicks(ActionEvent event) {
 		ChangeScenes change = new ChangeScenes();
 		if (event.getSource() == btnResidentes) {
@@ -108,7 +124,7 @@ public class ControllerMenu implements Initializable{
 			System.exit(0);
 		}
 	}
-	
+
 	@FXML
 	void handleExpand(MouseEvent event) {
 		if (event.getSource() == btnExpand) {
@@ -122,24 +138,72 @@ public class ControllerMenu implements Initializable{
 			}
 		}
 	}
-	
+
 	private void animated() {
 		new FadeIn(pnlStatus).play();
+	}
+
+	private void changePanel(AnchorPane panel) {
+		panel.setLayoutX(300);
+		panel.setLayoutY(220);
+	}
+
+	@FXML
+	void btnPanel1ReporteAction(ActionEvent event) {
+		panel1.toFront();
+	}
+
+	@FXML
+	void btnPanel1BuscarResidenteAction(ActionEvent event) {
+		panel2.toFront();
+	}
+
+	@FXML
+	void btnPanel1AgregarResidenteAction(ActionEvent event) {
+		panel3.toFront();
+	}
+
+	@FXML
+	void btnPanel1PoblacionResidentesAction(ActionEvent event) {
+		panel4.toFront();
+	}
+
+	@FXML
+	void btnPanel1GenerarReporteAction(ActionEvent event) {
+	}
+
+	@FXML
+	void btnPanel4GenerarAction(ActionEvent event) {	
+		XYChart.Series setl = new XYChart.Series();
+		XYChart.Series set2 = new XYChart.Series();
+		XYChart.Series set3 = new XYChart.Series();
+		XYChart.Series set4 = new XYChart.Series();
+		setl.setName("Niños 0 - 14");
+		set2.setName("Jovenes 15 - 24");
+		set3.setName("Adultos 25 - 49");
+		set4.setName("Adultos Mayores 50 - 80");
+		setl.getData().add(new XYChart.Data<>("", 20));
+		set2.getData().add(new XYChart.Data<>("", 10));
+		set3.getData().add(new XYChart.Data<>("", 30));
+		set4.getData().add(new XYChart.Data<>("", 60));
+		PoblaciónConjuntoResidencial.getData().addAll(setl);
+		PoblaciónConjuntoResidencial.getData().addAll(set2);
+		PoblaciónConjuntoResidencial.getData().addAll(set3);
+		PoblaciónConjuntoResidencial.getData().addAll(set4);
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		animated();
-		XYChart.Series setl = new XYChart.Series<>();
 
-		setl.getData().add(new XYChart.Data("Niños", 0 - 14));
-		setl.getData().add(new XYChart.Data("Jovenes", 15 - 24));
-		setl.getData().add(new XYChart.Data("Adultos", 25 - 49));
-		setl.getData().add(new XYChart.Data("Adultos Mayores", 50 - 80));
+		changePanel(panel2);
+		changePanel(panel3);
+		changePanel(panel4);
+		changePanel(panel1);
+		panel1.toFront();
 
-		PoblaciónConjuntoResidencial.getData().addAll(setl);
-		// TODO Auto-generated method stub
 		
+
 	}
 
 }
