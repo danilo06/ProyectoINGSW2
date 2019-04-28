@@ -1,6 +1,7 @@
 package ingsw.proyecto.SAGI.controllerView;
 
 import java.net.URL;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 import animatefx.animation.BounceIn;
 import animatefx.animation.FadeIn;
@@ -24,6 +25,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTimePicker;
 
 public class ControllerVisitante implements Initializable {
 
@@ -65,6 +68,12 @@ public class ControllerVisitante implements Initializable {
 
 	@FXML
 	private FontAwesomeIconView btnExpand;
+	
+	@FXML
+	private JFXTimePicker SeleccionarHora;
+
+	@FXML
+	private JFXDatePicker SeleccionarFecha;
 
 	private Boolean fullScreen = false;
 
@@ -118,6 +127,9 @@ public class ControllerVisitante implements Initializable {
 		pnlStatus.setBackground(
 				new Background(new BackgroundFill(Color.rgb(43, 63, 99), CornerRadii.EMPTY, Insets.EMPTY)));
 		animated();
+		
+		SeleccionarHora.setValue(LocalTime.of(06, 00));
+		
 	}
 
 }
