@@ -11,11 +11,15 @@ import animatefx.animation.Swing;
 import animatefx.animation.Tada;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -24,6 +28,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import org.controlsfx.control.Notifications;
 
 public class ControllerCerrarSesion implements Initializable {
 
@@ -65,8 +72,29 @@ public class ControllerCerrarSesion implements Initializable {
 
 	@FXML
 	private FontAwesomeIconView btnExpand;
+	
+	@FXML
+    private Button btnPanel1CerrarSesion;
 
 	private Boolean fullScreen = false;
+	
+	@FXML
+	private void btnPanel1CerrarSesionAction(ActionEvent event) {
+		Notifications notificationBuilder = Notifications.create()
+				.title("CERRAR SESIÓN")
+				.text("Cerrando Sesión")
+				.graphic(null)
+				.hideAfter(Duration.seconds(5))
+				.position(Pos.TOP_RIGHT)
+				.onAction(new EventHandler<ActionEvent>() {
+					
+			public void handle(ActionEvent event) {
+				System.out.println("ClOSE");
+			}
+		});
+		notificationBuilder.darkStyle();
+		notificationBuilder.showWarning();
+	}
 
 	@FXML
 	private void handleClicks(ActionEvent event) {
