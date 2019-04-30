@@ -180,7 +180,7 @@ public class ControllerMenu implements Initializable {
 	private TextField panel2txtTorre;
 
 	@FXML
-	private ComboBox<?> panel2cboxTipoDocumento;
+	private ComboBox<String> panel2cboxTipoDocumento;
 
 	@FXML
 	private TextField panel3txtBusqResidenteDoc;
@@ -231,7 +231,7 @@ public class ControllerMenu implements Initializable {
 					});
 			notificationBuilder.darkStyle();
 			notificationBuilder.showInformation();
-		}else {
+		} else {
 			panel3txtNombreResidente.setText(residente.getNombre());
 			panel3txtTipoDocumento.setText(residente.getTipoDocumento());
 			panel3txtTelefonoResidente.setText(residente.getCelular());
@@ -242,10 +242,10 @@ public class ControllerMenu implements Initializable {
 			panel3txtTorre.setText(residente.getTorre());
 			if (residente.getGenero().equals("Hombre")) {
 				rbpnl3Hombre.setDisable(true);
-			}else {
+			} else {
 				rbpnl3Mujer.setDisable(true);
 			}
-			
+
 		}
 	}
 
@@ -358,20 +358,43 @@ public class ControllerMenu implements Initializable {
 		for (int i = 0; i < zonaResidencial.getResidente().size(); i++) {
 			residentes1.add(zonaResidencial.getResidente().get(i));
 		}
+		
+		panel2cboxTipoDocumento.getItems().add("CC");
+		panel2cboxTipoDocumento.getItems().add("PAS");
+		panel2cboxTipoDocumento.getItems().add("TI");
+		panel2cboxTipoDocumento.getItems().add("RC");
+		panel2cboxTipoDocumento.getItems().add("CE");
+		panel2cboxTipoDocumento.getItems().add("CD");
+		panel2cboxTipoDocumento.getItems().add("CV");
+		panel2cboxTipoDocumento.getItems().add("NUIP");
 	}
 
 	@FXML
 	void btnPanel2AgregarResidenteAction(ActionEvent event) {
-		Notifications notificationBuilder = Notifications.create().title("AVISO").text("Residente Registrado")
-				.graphic(null).hideAfter(Duration.seconds(5)).position(Pos.CENTER)
-				.onAction(new EventHandler<ActionEvent>() {
+		Residente residente = new Residente();
+		if (panel2txtDocumentoResidente.getText().equals("") || panel2cboxTipoDocumento.getAccessibleText().equals("")
+				|| panel2txtNombreResidente.getText().equals("") || panel2txtApartamento.getText().equals("")
+				|| panel2txtTorre.getText().equals("")) {
 
-					public void handle(ActionEvent event) {
-						System.out.println("Registrado");
-					}
-				});
-		notificationBuilder.darkStyle();
-		notificationBuilder.showInformation();
+			Notifications notificationBuilder = Notifications.create().title("AVISO").text("Digite los campos")
+					.graphic(null).hideAfter(Duration.seconds(5)).position(Pos.CENTER)
+					.onAction(new EventHandler<ActionEvent>() {
+
+						public void handle(ActionEvent event) {
+							System.out.println("Campos vacios");
+						}
+					});
+			notificationBuilder.darkStyle();
+			notificationBuilder.showInformation();
+		} else {
+			residente = new Residente.ResidenteBuilder().setNombre(panel2txtNombreResidente.getText())
+					.setNumDocumento(panel2txtDocumentoResidente.getText())
+					.setTipoDocumento(panel2cboxTipoDocumento.getAccessibleText())
+					.setCelular(panel2txtTelResidente.getText()).setEdad(Integer.parseInt(panel2txtEdad.getText()))
+					.setTipoResidente(panel2txtTipoResidente.getText()).setApartamento(panel2txtApartamento.getText())
+					.setTorre(panel2txtTorre.getText()).build();
+			residentes1.add(residente);
+		}
 
 	}
 
