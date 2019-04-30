@@ -158,9 +158,9 @@ public class ZonaResidencial {
 	public List<Visitante> getVisitante() {
 		return visitante;
 	}
-	
+
 	public Residente busResidente(String doc) {
-		for (int i=0;i<residente.size();i++) {
+		for (int i = 0; i < residente.size(); i++) {
 			if (doc.equals(residente.get(i).getNumDocumento())) {
 				return residente.get(i);
 			}
@@ -178,6 +178,10 @@ public class ZonaResidencial {
 
 	public void setBaseDatos(BaseDatos baseDatos) {
 		this.baseDatos = baseDatos;
+	}
+	
+	public void addResidente(Residente residente) {
+		this.residente.add(residente);
 	}
 
 }

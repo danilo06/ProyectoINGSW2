@@ -327,7 +327,6 @@ public class ControllerMenu implements Initializable {
 	@FXML
 	void btnPanel4GenerarAction(ActionEvent event) {
 		zonaResidencial.generarSegmentos();
-
 		XYChart.Series setl = new XYChart.Series();
 		XYChart.Series set2 = new XYChart.Series();
 		XYChart.Series set3 = new XYChart.Series();
@@ -358,7 +357,7 @@ public class ControllerMenu implements Initializable {
 		for (int i = 0; i < zonaResidencial.getResidente().size(); i++) {
 			residentes1.add(zonaResidencial.getResidente().get(i));
 		}
-		
+
 		panel2cboxTipoDocumento.getItems().add("CC");
 		panel2cboxTipoDocumento.getItems().add("PAS");
 		panel2cboxTipoDocumento.getItems().add("TI");
@@ -371,10 +370,8 @@ public class ControllerMenu implements Initializable {
 
 	@FXML
 	void btnPanel2AgregarResidenteAction(ActionEvent event) {
-		Residente residente = new Residente();
-		if (panel2txtDocumentoResidente.getText().equals("") || panel2cboxTipoDocumento.getAccessibleText().equals("")
-				|| panel2txtNombreResidente.getText().equals("") || panel2txtApartamento.getText().equals("")
-				|| panel2txtTorre.getText().equals("")) {
+		if (panel2txtDocumentoResidente.getText().equals("") || panel2txtNombreResidente.getText().equals("")
+				|| panel2txtApartamento.getText().equals("") || panel2txtTorre.getText().equals("")) {
 
 			Notifications notificationBuilder = Notifications.create().title("AVISO").text("Digite los campos")
 					.graphic(null).hideAfter(Duration.seconds(5)).position(Pos.CENTER)
@@ -387,13 +384,25 @@ public class ControllerMenu implements Initializable {
 			notificationBuilder.darkStyle();
 			notificationBuilder.showInformation();
 		} else {
-			residente = new Residente.ResidenteBuilder().setNombre(panel2txtNombreResidente.getText())
-					.setNumDocumento(panel2txtDocumentoResidente.getText())
-					.setTipoDocumento(panel2cboxTipoDocumento.getAccessibleText())
+			Residente residente;
+			residente = new Residente.ResidenteBuilder().setApartamento(panel2txtApartamento.getText())
 					.setCelular(panel2txtTelResidente.getText()).setEdad(Integer.parseInt(panel2txtEdad.getText()))
-					.setTipoResidente(panel2txtTipoResidente.getText()).setApartamento(panel2txtApartamento.getText())
-					.setTorre(panel2txtTorre.getText()).build();
+					.setGenero("Hombre").setNombre(panel2txtNombreResidente.getText())
+					.setNumDocumento(panel2txtDocumentoResidente.getText())
+					.setTipoDocumento(panel2cboxTipoDocumento.getValue())
+					.setTipoResidente(panel2txtTipoResidente.getText()).setTorre(panel2txtTorre.getText()).build();
 			residentes1.add(residente);
+			zonaResidencial.addResidente(residente);
+			Notifications notificationBuilder = Notifications.create().title("AVISO").text("Residente Regristrado")
+					.graphic(null).hideAfter(Duration.seconds(5)).position(Pos.CENTER)
+					.onAction(new EventHandler<ActionEvent>() {
+
+						public void handle(ActionEvent event) {
+							System.out.println("Registro residente");
+						}
+					});
+			notificationBuilder.darkStyle();
+			notificationBuilder.showInformation();
 		}
 
 	}

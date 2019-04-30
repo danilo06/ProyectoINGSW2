@@ -20,7 +20,7 @@ public class MainParqueadero extends Application {
 
 	@Override
 	public void start(final Stage stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("/Menu.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/Personal.fxml"));
 		// agarrar raíz aquí
 		root.setOnMousePressed(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {

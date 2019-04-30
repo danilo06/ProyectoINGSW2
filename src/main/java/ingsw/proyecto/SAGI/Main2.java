@@ -20,7 +20,7 @@ public class Main2 extends Application {
 
 	@Override
 	public void start(final Stage stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/Parqueadero.fxml"));
 		// agarrar raíz aquí
 		root.setOnMousePressed(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {
