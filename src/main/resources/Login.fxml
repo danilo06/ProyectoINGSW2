@@ -17,12 +17,12 @@
             <Font name="Calibri Light" size="22.0" />
          </font>
       </Label>
-      <TextField alignment="CENTER" layoutX="262.0" layoutY="221.0" prefHeight="30.0" prefWidth="250.0" promptText="UserName" styleClass="textfields">
+      <TextField fx:id="txtUser" alignment="CENTER" layoutX="262.0" layoutY="221.0" prefHeight="30.0" prefWidth="250.0" promptText="UserName" styleClass="textfields">
          <font>
             <Font name="Calibri Light" size="14.0" />
          </font>
       </TextField>
-      <PasswordField alignment="CENTER" layoutX="262.0" layoutY="270.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfields">
+      <PasswordField fx:id="passwordUser" alignment="CENTER" layoutX="262.0" layoutY="270.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfields">
          <font>
             <Font name="Calibri Light" size="14.0" />
          </font>

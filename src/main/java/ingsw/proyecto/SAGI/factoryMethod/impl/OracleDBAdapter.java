@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Properties;
-import oracle.jdbc.OracleDriver;
+//import oracle.jdbc.OracleDriver;
 import ingsw.proyecto.SAGI.factoryMethod.*;
 import ingsw.proyecto.SAGI.factoryMethod.util.*;
 
@@ -23,7 +23,7 @@ public class OracleDBAdapter implements IDBAdapter {
 		// Bloque para registrar el Driver de Oracle
 
 		try {
-			new OracleDriver(); // Es necesario configurar el buildpath con el driver correspondiente
+			//new OracleDriver(); // Es necesario configurar el buildpath con el driver correspondiente
 
 		} catch (Exception e) {
 			e.printStackTrace();

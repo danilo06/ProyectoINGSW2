@@ -15,44 +15,19 @@ public class Persona {
     }
 
     /**
-	 * @param nombre
-	 * @param numDocumento
-	 * @param tipoDocumnto
-	 * @param genero
-	 * @param celular
-	 */
-	public Persona(String nombre, String numDocumento, String tipoDocumnto, String genero, Double celular) {
-		this.nombre = nombre;
-		this.numDocumento = numDocumento;
-		this.tipoDocumnto = tipoDocumnto;
-		this.genero = genero;
-		this.celular = celular;
-	}
-
-	/**
      * 
      */
-    private String nombre;
+    protected String nombre;
 
     /**
      * 
      */
-    private String numDocumento;
+    protected String numDocumento;
 
     /**
      * 
      */
-    private String tipoDocumnto;
-
-    /**
-     * 
-     */
-    private String genero;
-
-    /**
-     * 
-     */
-    private Double celular;
+    protected String celular;
 
 	public String getNombre() {
 		return nombre;
@@ -70,36 +45,18 @@ public class Persona {
 		this.numDocumento = numDocumento;
 	}
 
-	public String getTipoDocumnto() {
-		return tipoDocumnto;
-	}
-
-	public void setTipoDocumnto(String tipoDocumnto) {
-		this.tipoDocumnto = tipoDocumnto;
-	}
-
-	public String getGenero() {
-		return genero;
-	}
-
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
-
-	public Double getCelular() {
+	public String getCelular() {
 		return celular;
 	}
 
-	public void setCelular(Double celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 
 	@Override
 	public String toString() {
-		return "Persona [nombre=" + nombre + ", numDocumento=" + numDocumento + ", tipoDocumnto=" + tipoDocumnto
-				+ ", genero=" + genero + ", celular=" + celular + "]";
+		return "Persona [nombre=" + nombre + ", numDocumento=" + numDocumento + ", celular=" + celular + "]";
 	}
-    
     
     
 

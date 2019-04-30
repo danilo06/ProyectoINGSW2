@@ -1,16 +1,17 @@
 package ingsw.proyecto.SAGI.proxy.services;
 
-import java.util.*;
+import ingsw.proyecto.SAGI.model.BaseDatos;
 
-/**
- * 
- */
 public class SecurityService {
-
-    /**
-     * Default constructor
-     */
-    public SecurityService() {
-    }
-
+	public boolean authorization(String user, String password) {
+		BaseDatos bd = new BaseDatos();
+		bd.cargeLista();
+		if (bd.validarUserLogin(user)) {
+			if (bd.getUserLogin(user).getPassword().equals(password)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }

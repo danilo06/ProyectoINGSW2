@@ -2,10 +2,11 @@ package ingsw.proyecto.SAGI.factoryMethod;
 
 import java.sql.SQLException;
 import java.util.List;
-import ingsw.pdd.factorymethod.dao.ProductDAO;
-import ingsw.pdd.factorymethod.entity.Product;
+//import ingsw.pdd.factorymethod.dao.ProductDAO;
+//import ingsw.pdd.factorymethod.entity.Product;
 
 public class FactoryMain {
+	/*
 	public static void main(String[] args) throws SQLException {
 		// Creamos los nuevos productos a registrar
 		Product productA = new Product(1L, "Producto A", 100);
@@ -25,4 +26,5 @@ public class FactoryMain {
 			System.out.println(product);
 		}
 	}
+	*/
 }

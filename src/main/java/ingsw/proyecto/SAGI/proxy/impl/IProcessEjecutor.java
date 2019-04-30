@@ -1,16 +1,7 @@
 package ingsw.proyecto.SAGI.proxy.impl;
 
-import java.util.*;
+import javafx.scene.layout.AnchorPane;
 
-/**
- * 
- */
-public class IProcessEjecutor {
-
-    /**
-     * Default constructor
-     */
-    public IProcessEjecutor() {
-    }
-
+public interface IProcessEjecutor {
+	public void ejecuteProcess(String user, String password) throws Exception;
 }
