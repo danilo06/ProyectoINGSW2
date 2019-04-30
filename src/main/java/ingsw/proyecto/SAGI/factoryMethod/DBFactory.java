@@ -29,7 +29,6 @@ public class DBFactory {
 
 		try {
 			Properties prop = PropertiesUtil.loadProperty(DB_FACTORY_PROPERTY_URL);
-
 			String defaultDBClass = prop.getProperty(DEFAULT_DB_CLASS_PROP);
 			System.out.println("DefaultDBClass ==> " + defaultDBClass);
 			return (IDBAdapter) Class.forName(defaultDBClass).newInstance();
