@@ -45,12 +45,12 @@ public class Residente extends Persona {
 	private String genero;
 
 	/**
-	 * @param tipoDocumento
-	 * @param edad
-	 * @param tipoResidente
-	 * @param torre
-	 * @param apartamento
-	 * @param genero
+	 * @param tipoDocumento tipo de documento del residente
+	 * @param edad del residente
+	 * @param tipoResidente del residente Tipo.
+	 * @param torre en la cual habita el residente
+	 * @param apartamento en el cual esta asignado el residente
+	 * @param genero del abitante
 	 */
 	private Residente(String nombre, String numDocumento, String celular, String tipoDocumento, Integer edad,
 			String tipoResidente, String torre, String apartamento, String genero) {
@@ -65,38 +65,45 @@ public class Residente extends Persona {
 		this.genero = genero;
 	}
 	
-	
+	/**
+	 * tipo de documento para clase builder
+	 */
 
 	public String getTipoDocumento() {
 		return tipoDocumento;
 	}
 
-
-
+	/**
+	 * Tipo de documento para el builder, modificarlo
+	 */
 	public void setTipoDocumento(String tipoDocumento) {
 		this.tipoDocumento = tipoDocumento;
 	}
 
-
-
+	/**
+	 * Obtiene la edad del residente
+	 */
 	public Integer getEdad() {
 		return edad;
 	}
 
-
-
+	/**
+	 * Recibe la edad apra modificarla
+	 */
 	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
 
-
-
+	/**
+	 *  Nos permite obtener el tipo d residente.
+	 */
 	public String getTipoResidente() {
 		return tipoResidente;
 	}
 
-
-
+	/**
+	 * Set para modificar el tipo de residete.
+	 */
 	public void setTipoResidente(String tipoResidente) {
 		this.tipoResidente = tipoResidente;
 	}
