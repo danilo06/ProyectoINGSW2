@@ -236,8 +236,8 @@ public class ControllerMenu implements Initializable {
 					.title("AVISO")
 					.text("Residente Registrado")
 					.graphic(null)
-					.hideAfter(Duration.seconds(5))
-					.position(Pos.CENTER)
+					.hideAfter(Duration.seconds(3))
+					.position(Pos.BASELINE_RIGHT)
 					.onAction(new EventHandler<ActionEvent>() {
 						
 				public void handle(ActionEvent event) {

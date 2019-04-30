@@ -83,7 +83,7 @@ public class ControllerCerrarSesion implements Initializable {
 				.title("CERRAR SESIÓN")
 				.text("Cerrando Sesión")
 				.graphic(null)
-				.hideAfter(Duration.seconds(5))
+				.hideAfter(Duration.seconds(3))
 				.position(Pos.TOP_RIGHT)
 				.onAction(new EventHandler<ActionEvent>() {
 					
