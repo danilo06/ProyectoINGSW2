@@ -2,11 +2,16 @@ package ingsw.proyecto.SAGI.controllerView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import org.controlsfx.control.Notifications;
+
 import animatefx.animation.FadeIn;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
@@ -20,6 +25,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class ControllerMenu implements Initializable {
 
@@ -115,6 +121,9 @@ public class ControllerMenu implements Initializable {
     
     @FXML
     private ToggleGroup tgpnl3Genero;
+    
+    @FXML
+    private Button btnPanel2AgregarResidente;
 
 	private boolean fullScreen = false;
 
@@ -220,9 +229,24 @@ public class ControllerMenu implements Initializable {
 		changePanel(panel4);
 		changePanel(panel1);
 		panel1.toFront();
-
-		
-
 	}
+	 @FXML
+	    void btnPanel2AgregarResidenteAction(ActionEvent event) {
+		 Notifications notificationBuilder = Notifications.create()
+					.title("AVISO")
+					.text("Residente Registrado")
+					.graphic(null)
+					.hideAfter(Duration.seconds(5))
+					.position(Pos.CENTER)
+					.onAction(new EventHandler<ActionEvent>() {
+						
+				public void handle(ActionEvent event) {
+					System.out.println("Registrado");
+				}
+			});
+			notificationBuilder.darkStyle();
+			notificationBuilder.showInformation();
+		 
+	 }
 
 }

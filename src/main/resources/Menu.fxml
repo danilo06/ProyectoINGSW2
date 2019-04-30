@@ -276,7 +276,7 @@
       </AnchorPane>
       <AnchorPane fx:id="panel2" layoutX="1458.0" layoutY="200.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Button graphicTextGap="10.0" layoutX="124.0" layoutY="39.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="227.0" style="-fx-background-color: #092489;" text="Agregar Residente" textFill="WHITE">
+            <Button fx:id="btnPanel2AgregarResidente" graphicTextGap="10.0" layoutX="124.0" layoutY="39.0" mnemonicParsing="false" onAction="#btnPanel2AgregarResidenteAction" prefHeight="40.0" prefWidth="227.0" style="-fx-background-color: #092489;" text="Agregar Residente" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -343,6 +343,7 @@
             <Label layoutX="431.0" layoutY="406.0" text="Torre:" />
             <FontAwesomeIconView glyphName="USERS" layoutX="763.0" layoutY="178.0" size="150" />
             <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="495.0" layoutY="69.0" size="30" />
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="154.0" layoutY="69.0" size="30" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="panel3" layoutX="2465.0" layoutY="201.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
