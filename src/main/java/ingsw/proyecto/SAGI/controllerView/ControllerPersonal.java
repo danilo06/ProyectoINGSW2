@@ -16,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -65,6 +67,18 @@ public class ControllerPersonal implements Initializable {
 
 	@FXML
 	private FontAwesomeIconView btnExpand;
+	
+	@FXML
+    private RadioButton rbpnl1Masculino;
+
+    @FXML
+    private ToggleGroup tgpnl1Genero;
+
+    @FXML
+    private RadioButton rbpnl1Femenino;
+
+    @FXML
+    private RadioButton rbpnl1Otro;
 
 	private Boolean fullScreen = false;
 

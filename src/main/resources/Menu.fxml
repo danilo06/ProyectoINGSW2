@@ -11,6 +11,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -323,8 +324,11 @@
                </font>
             </TextField>
             <Label layoutX="426.0" layoutY="314.0" text="Genero:" />
-            <RadioButton layoutX="474.0" layoutY="331.0" mnemonicParsing="false" text="Hombre" />
-            <RadioButton layoutX="474.0" layoutY="363.0" mnemonicParsing="false" text="Mujer" />
+            <RadioButton fx:id="rbpnl2Hombre" layoutX="474.0" layoutY="331.0" mnemonicParsing="false" text="Hombre">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgpnl2Genero" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rbpnl2Mujer" layoutX="474.0" layoutY="363.0" mnemonicParsing="false" text="Mujer" toggleGroup="$tgpnl2Genero" />
             <TextField layoutX="124.0" layoutY="399.0" prefHeight="31.0" prefWidth="265.0" promptText="Apartamento del Residente" style="-fx-border-color: #092489;">
                <font>
                   <Font name="Calibri Light Italic" size="15.0" />
@@ -385,18 +389,12 @@
             </Button>
             <Label layoutX="523.0" layoutY="185.0" text="Documento:" />
             <Label layoutX="541.0" layoutY="254.0" text="Edad:" />
-            <Label layoutX="534.0" layoutY="327.0" text="ESTADO:" />
             <TextField layoutX="597.0" layoutY="178.0" prefHeight="31.0" prefWidth="204.0" promptText="Documento del Residente" style="-fx-border-color: #092489;">
                <font>
                   <Font name="Calibri Light Italic" size="15.0" />
                </font>
             </TextField>
             <TextField layoutX="597.0" layoutY="247.0" prefHeight="31.0" prefWidth="204.0" promptText="Edad del Residente" style="-fx-border-color: #092489;">
-               <font>
-                  <Font name="Calibri Light Italic" size="15.0" />
-               </font>
-            </TextField>
-            <TextField layoutX="597.0" layoutY="320.0" prefHeight="31.0" prefWidth="109.0" style="-fx-border-color: #092489;">
                <font>
                   <Font name="Calibri Light Italic" size="15.0" />
                </font>
@@ -414,6 +412,13 @@
             </TextField>
             <Label layoutX="540.0" layoutY="399.0" text="Torre:" />
             <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="542.0" layoutY="72.0" size="30" />
+            <Label layoutX="540.0" layoutY="301.0" text="Genero:" />
+            <RadioButton fx:id="rbpnl3Hombre" layoutX="597.0" layoutY="319.0" mnemonicParsing="false" text="Hombre">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgpnl3Genero" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbpnl3Mujer" layoutX="596.0" layoutY="349.0" mnemonicParsing="false" text="Mujer" toggleGroup="$tgpnl3Genero" />
          </children>
       </AnchorPane>
    </children>

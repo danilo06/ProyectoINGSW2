@@ -13,6 +13,8 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -95,6 +97,24 @@ public class ControllerMenu implements Initializable {
 
 	@FXML
 	private AnchorPane panel3;
+	
+	@FXML
+    private RadioButton rbpnl2Hombre;
+
+    @FXML
+    private RadioButton rbpnl2Mujer;
+    
+    @FXML
+    private ToggleGroup tgpnl2Genero;
+    
+    @FXML
+    private RadioButton rbpnl3Hombre;
+
+    @FXML
+    private RadioButton rbpnl3Mujer;
+    
+    @FXML
+    private ToggleGroup tgpnl3Genero;
 
 	private boolean fullScreen = false;
 
@@ -191,7 +211,7 @@ public class ControllerMenu implements Initializable {
 		PoblaciónConjuntoResidencial.getData().addAll(set3);
 		PoblaciónConjuntoResidencial.getData().addAll(set4);
 	}
-
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		animated();
