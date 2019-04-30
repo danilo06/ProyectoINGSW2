@@ -1,11 +1,16 @@
 package ingsw.proyecto.SAGI.proxy.impl;
 
 import org.controlsfx.control.Notifications;
+
+import ingsw.proyecto.SAGI.controllerView.ChangeScenes;
 import ingsw.proyecto.SAGI.proxy.services.SecurityService;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.util.Duration;
+
 
 /**
  * 
@@ -13,7 +18,7 @@ import javafx.util.Duration;
 public class ProcessEjecutorProxy implements IProcessEjecutor {
 
 	@Override
-	public void ejecuteProcess(String user, String password) throws Exception {
+	public void ejecuteProcess(String user, String password){
 		SecurityService securityService = new SecurityService();
 		if (!securityService.authorization(user, password)) {
 			Notifications notificationBuilder = Notifications.create().title("AVISO")
@@ -26,8 +31,10 @@ public class ProcessEjecutorProxy implements IProcessEjecutor {
 					});
 			notificationBuilder.darkStyle();
 			notificationBuilder.showInformation();
-			throw new Exception("El usuario '" + user + "' no tiene privilegios para ejecutar el proceso");
 		}
-
+		
 	}
+
+
+
 }

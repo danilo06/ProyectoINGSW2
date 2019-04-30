@@ -28,6 +28,16 @@ public class BaseDatos {
 		return false;
 	}
 
+	
+	
+	public static List<UserLogin> getUsers() {
+		return users;
+	}
+
+	public static void setUsers(List<UserLogin> users) {
+		BaseDatos.users = users;
+	}
+
 	public UserLogin getUserLogin(String user) {
 		UserLogin user1 = null;
 		for (int i = 0; i < users.size(); i++) {
@@ -62,7 +72,7 @@ public class BaseDatos {
 		BaseDatos.empleados = empleados;
 	}
 
-	public static List<Residente> getResidentes() {
+	public List<Residente> getResidentes() {
 		return residentes;
 	}
 
@@ -91,31 +101,31 @@ public class BaseDatos {
 
 	private void generateResidente() {
 		Residente res;
-		res = new Residente.ResidenteBuilder().setApartamento("402").setCelular("3112541112").setEdad(40)
+		res = new Residente.ResidenteBuilder().setApartamento("402").setCelular("3112541112").setEdad(0)
 				.setGenero("Hombre").setNombre("Danilo Beleño").setNumDocumento("1030123123").setTipoDocumento("CC")
 				.setTipoResidente("Propietario").setTorre("TO1").build();
 		residentes.add(res);
-		res = new Residente.ResidenteBuilder().setApartamento("450").setCelular("3112312312").setEdad(60)
+		res = new Residente.ResidenteBuilder().setApartamento("450").setCelular("3112312312").setEdad(0)
 				.setGenero("Mujer").setNombre("Sonia Mancipe").setNumDocumento("1320123123").setTipoDocumento("CC")
 				.setTipoResidente("Propietario").setTorre("TO2").build();
 		residentes.add(res);
-		res = new Residente.ResidenteBuilder().setApartamento("406").setCelular("3232251112").setEdad(23)
+		res = new Residente.ResidenteBuilder().setApartamento("406").setCelular("3232251112").setEdad(0)
 				.setGenero("Hombre").setNombre("Alejandro Buitrago").setNumDocumento("143123123").setTipoDocumento("CC")
 				.setTipoResidente("Arrendatario").setTorre("TO1").build();
 		residentes.add(res);
-		res = new Residente.ResidenteBuilder().setApartamento("408").setCelular("3112341112").setEdad(10)
+		res = new Residente.ResidenteBuilder().setApartamento("408").setCelular("3112341112").setEdad(0)
 				.setGenero("Mujer").setNombre("Sara").setNumDocumento("10303123").setTipoDocumento("TI")
 				.setTipoResidente("Propietario").setTorre("TO1").build();
 		residentes.add(res);
-		res = new Residente.ResidenteBuilder().setApartamento("409").setCelular("4532541112").setEdad(4)
+		res = new Residente.ResidenteBuilder().setApartamento("409").setCelular("4532541112").setEdad(23)
 				.setGenero("Hombre").setNombre("Andres").setNumDocumento("123123").setTipoDocumento("RC")
 				.setTipoResidente("Arrendatario").setTorre("TO3").build();
 		residentes.add(res);
-		res = new Residente.ResidenteBuilder().setApartamento("402").setCelular("1232541112").setEdad(8)
+		res = new Residente.ResidenteBuilder().setApartamento("402").setCelular("1232541112").setEdad(23)
 				.setGenero("Mujer").setNombre("Clara").setNumDocumento("1033123").setTipoDocumento("TI")
 				.setTipoResidente("Propietario").setTorre("TO3").build();
 		residentes.add(res);
-		res = new Residente.ResidenteBuilder().setApartamento("202").setCelular("1232541112").setEdad(34)
+		res = new Residente.ResidenteBuilder().setApartamento("202").setCelular("1232541112").setEdad(23)
 				.setGenero("Hombre").setNombre("Juan").setNumDocumento("10432430123123").setTipoDocumento("CC")
 				.setTipoResidente("Propietario").setTorre("TO2").build();
 		residentes.add(res);
@@ -123,7 +133,7 @@ public class BaseDatos {
 				.setGenero("Mujer").setNombre("Katalina").setNumDocumento("10423430123123").setTipoDocumento("CV")
 				.setTipoResidente("Residente").setTorre("TO4").build();
 		residentes.add(res);
-		res = new Residente.ResidenteBuilder().setApartamento("102").setCelular("5322541112").setEdad(45)
+		res = new Residente.ResidenteBuilder().setApartamento("102").setCelular("5322541112").setEdad(23)
 				.setGenero("Hombre").setNombre("Daniel").setNumDocumento("OE30123123").setTipoDocumento("CD")
 				.setTipoResidente("Residente").setTorre("TO2").build();
 		residentes.add(res);

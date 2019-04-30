@@ -2,11 +2,13 @@ package ingsw.proyecto.SAGI.controllerView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import org.controlsfx.control.Notifications;
-
 import animatefx.animation.FadeIn;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import ingsw.proyecto.SAGI.model.Residente;
+import ingsw.proyecto.SAGI.model.ZonaResidencial;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -17,12 +19,16 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -103,29 +109,145 @@ public class ControllerMenu implements Initializable {
 
 	@FXML
 	private AnchorPane panel3;
-	
+
 	@FXML
-    private RadioButton rbpnl2Hombre;
+	private RadioButton rbpnl2Hombre;
 
-    @FXML
-    private RadioButton rbpnl2Mujer;
-    
-    @FXML
-    private ToggleGroup tgpnl2Genero;
-    
-    @FXML
-    private RadioButton rbpnl3Hombre;
+	@FXML
+	private RadioButton rbpnl2Mujer;
 
-    @FXML
-    private RadioButton rbpnl3Mujer;
-    
-    @FXML
-    private ToggleGroup tgpnl3Genero;
-    
-    @FXML
-    private Button btnPanel2AgregarResidente;
+	@FXML
+	private ToggleGroup tgpnl2Genero;
+
+	@FXML
+	private RadioButton rbpnl3Hombre;
+
+	@FXML
+	private RadioButton rbpnl3Mujer;
+
+	@FXML
+	private ToggleGroup tgpnl3Genero;
+
+	@FXML
+	private Button btnPanel2AgregarResidente;
+
+	@FXML
+	private TableView<Residente> tableResidente;
+
+	@FXML
+	private TableColumn<Residente, String> columTipoDoc;
+
+	@FXML
+	private TableColumn<Residente, String> columDoc;
+
+	@FXML
+	private TableColumn<Residente, String> columNombre;
+
+	@FXML
+	private TableColumn<Residente, String> columMovil;
+
+	@FXML
+	private TableColumn<Residente, String> columTipoResidente;
+
+	@FXML
+	private TableColumn<Residente, String> columGenero;
+
+	@FXML
+	private TableColumn<Residente, String> columTorre;
+
+	@FXML
+	private TableColumn<Residente, String> columApartamento;
+
+	@FXML
+	private TextField panel2txtNombreResidente;
+
+	@FXML
+	private TextField panel2txtTelResidente;
+
+	@FXML
+	private TextField panel2txtTipoResidente;
+
+	@FXML
+	private TextField panel2txtDocumentoResidente;
+
+	@FXML
+	private TextField panel2txtEdad;
+
+	@FXML
+	private TextField panel2txtApartamento;
+
+	@FXML
+	private TextField panel2txtTorre;
+
+	@FXML
+	private ComboBox<?> panel2cboxTipoDocumento;
+
+	@FXML
+	private TextField panel3txtBusqResidenteDoc;
+
+	@FXML
+	private TextField panel3txtNombreResidente;
+
+	@FXML
+	private TextField panel3txtTipoDocumento;
+
+	@FXML
+	private TextField panel3txtTelefonoResidente;
+
+	@FXML
+	private TextField panel3txtTipoResidente;
+
+	@FXML
+	private TextField panel3txtDocumentoResidente;
+
+	@FXML
+	private TextField panel3txtEdadResidente;
+
+	@FXML
+	private TextField panel3txtApartamento;
+
+	@FXML
+	private TextField panel3txtTorre;
+
+	@FXML
+	private Button Panel3btnBuscar;
+
+	ObservableList<Residente> residentes1;
+
+	ZonaResidencial zonaResidencial = ZonaResidencial.getInstance();
 
 	private boolean fullScreen = false;
+
+	@FXML
+	void Panel3btnBuscarAction(ActionEvent event) {
+		Residente residente = zonaResidencial.busResidente(panel3txtBusqResidenteDoc.getText());
+		if (residente == null) {
+			Notifications notificationBuilder = Notifications.create().title("AVISO").text("Residente no registrado")
+					.graphic(null).hideAfter(Duration.seconds(5)).position(Pos.CENTER)
+					.onAction(new EventHandler<ActionEvent>() {
+						public void handle(ActionEvent event) {
+							System.out.println("No Econtrado");
+						}
+					});
+			notificationBuilder.darkStyle();
+			notificationBuilder.showInformation();
+		}else {
+			panel3txtNombreResidente.setText(residente.getNombre());
+			panel3txtTipoDocumento.setText(residente.getTipoDocumento());
+			panel3txtTelefonoResidente.setText(residente.getCelular());
+			panel3txtTipoResidente.setText(residente.getTipoResidente());
+			panel3txtApartamento.setText(residente.getApartamento());
+			panel3txtDocumentoResidente.setText(residente.getNumDocumento());
+			panel3txtEdadResidente.setText(String.valueOf(residente.getEdad()));
+			panel3txtTorre.setText(residente.getTorre());
+			if (residente.getGenero().equals("Hombre")) {
+				rbpnl3Hombre.setDisable(true);
+			}else {
+				rbpnl3Mujer.setDisable(true);
+			}
+			
+		}
+	}
 
 	@FXML
 	private void handleClicks(ActionEvent event) {
@@ -201,8 +323,11 @@ public class ControllerMenu implements Initializable {
 	void btnPanel1GenerarReporteAction(ActionEvent event) {
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@FXML
-	void btnPanel4GenerarAction(ActionEvent event) {	
+	void btnPanel4GenerarAction(ActionEvent event) {
+		zonaResidencial.generarSegmentos();
+
 		XYChart.Series setl = new XYChart.Series();
 		XYChart.Series set2 = new XYChart.Series();
 		XYChart.Series set3 = new XYChart.Series();
@@ -211,16 +336,16 @@ public class ControllerMenu implements Initializable {
 		set2.setName("Jovenes 15 - 24");
 		set3.setName("Adultos 25 - 49");
 		set4.setName("Adultos Mayores 50 - 80");
-		setl.getData().add(new XYChart.Data<>("", 20));
-		set2.getData().add(new XYChart.Data<>("", 10));
-		set3.getData().add(new XYChart.Data<>("", 30));
-		set4.getData().add(new XYChart.Data<>("", 60));
+		setl.getData().add(new XYChart.Data<>("", zonaResidencial.getSegmentoA()));
+		set2.getData().add(new XYChart.Data<>("", zonaResidencial.getSegmentoB()));
+		set3.getData().add(new XYChart.Data<>("", zonaResidencial.getSegmentoC()));
+		set4.getData().add(new XYChart.Data<>("", zonaResidencial.getSegmentoD()));
 		PoblaciónConjuntoResidencial.getData().addAll(setl);
 		PoblaciónConjuntoResidencial.getData().addAll(set2);
 		PoblaciónConjuntoResidencial.getData().addAll(set3);
 		PoblaciónConjuntoResidencial.getData().addAll(set4);
 	}
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		animated();
@@ -229,24 +354,39 @@ public class ControllerMenu implements Initializable {
 		changePanel(panel4);
 		changePanel(panel1);
 		panel1.toFront();
+		this.inicializarTablaResidentes();
+		for (int i = 0; i < zonaResidencial.getResidente().size(); i++) {
+			residentes1.add(zonaResidencial.getResidente().get(i));
+		}
 	}
-	 @FXML
-	    void btnPanel2AgregarResidenteAction(ActionEvent event) {
-		 Notifications notificationBuilder = Notifications.create()
-					.title("AVISO")
-					.text("Residente Registrado")
-					.graphic(null)
-					.hideAfter(Duration.seconds(5))
-					.position(Pos.CENTER)
-					.onAction(new EventHandler<ActionEvent>() {
-						
-				public void handle(ActionEvent event) {
-					System.out.println("Registrado");
-				}
-			});
-			notificationBuilder.darkStyle();
-			notificationBuilder.showInformation();
-		 
-	 }
+
+	@FXML
+	void btnPanel2AgregarResidenteAction(ActionEvent event) {
+		Notifications notificationBuilder = Notifications.create().title("AVISO").text("Residente Registrado")
+				.graphic(null).hideAfter(Duration.seconds(5)).position(Pos.CENTER)
+				.onAction(new EventHandler<ActionEvent>() {
+
+					public void handle(ActionEvent event) {
+						System.out.println("Registrado");
+					}
+				});
+		notificationBuilder.darkStyle();
+		notificationBuilder.showInformation();
+
+	}
+
+	private void inicializarTablaResidentes() {
+
+		columTipoDoc.setCellValueFactory(new PropertyValueFactory<Residente, String>("tipoDocumento"));
+		columDoc.setCellValueFactory(new PropertyValueFactory<Residente, String>("numDocumento"));
+		columNombre.setCellValueFactory(new PropertyValueFactory<Residente, String>("nombre"));
+		columMovil.setCellValueFactory(new PropertyValueFactory<Residente, String>("celular"));
+		columTipoResidente.setCellValueFactory(new PropertyValueFactory<Residente, String>("tipoResidente"));
+		columGenero.setCellValueFactory(new PropertyValueFactory<Residente, String>("genero"));
+		columTorre.setCellValueFactory(new PropertyValueFactory<Residente, String>("torre"));
+		columApartamento.setCellValueFactory(new PropertyValueFactory<Residente, String>("apartamento"));
+		residentes1 = FXCollections.observableArrayList();
+		tableResidente.setItems(residentes1);
+	}
 
 }

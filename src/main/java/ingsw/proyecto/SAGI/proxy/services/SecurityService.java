@@ -8,6 +8,7 @@ public class SecurityService {
 		bd.cargeLista();
 		if (bd.validarUserLogin(user)) {
 			if (bd.getUserLogin(user).getPassword().equals(password)) {
+				System.out.println("true");
 				return true;
 			}
 		}
