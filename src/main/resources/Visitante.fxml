@@ -276,7 +276,7 @@
          </font>
       </Label>
       <FontAwesomeIconView fx:id="btnExpand" fill="#cd1c1c" glyphName="EXPAND" layoutX="1234.0" layoutY="24.0" onMouseClicked="#handleExpand" size="20" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="7.0" />
-      <AnchorPane fx:id="panel211" layoutX="1288.0" layoutY="201.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane fx:id="panel211" layoutX="1423.0" layoutY="201.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
          <children>
             <FontAwesomeIconView glyphName="THUMBS_UP" layoutX="860.0" layoutY="94.0" size="100" wrappingWidth="72.99995106458664" />
             <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="495.0" layoutY="69.0" size="30" />
@@ -298,9 +298,36 @@
                   <Font name="Calibri Light" size="50.0" />
                </font>
             </Label>
+            <Button graphicTextGap="10.0" layoutX="728.0" layoutY="465.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="227.0" style="-fx-background-color: #092489;" text="Retirar Visitante" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER_TIMES" layoutX="754.0" layoutY="495.0" size="30" />
+            <Button graphicTextGap="10.0" layoutX="531.0" layoutY="465.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="171.0" style="-fx-background-color: #092489;" text="Generar Listado" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="FILE_ALT" layoutX="557.0" layoutY="495.0" size="30" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="2285.0" layoutY="201.0" prefHeight="256.0" prefWidth="488.0" style="-fx-background-color: #ffffffff;">
+      <AnchorPane layoutX="2492.0" layoutY="201.0" prefHeight="256.0" prefWidth="488.0" style="-fx-background-color: #ffffffff;">
          <children>
             <Label layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="171.0" text="RETIRAR VISITANTE">
                <font>

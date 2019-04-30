@@ -264,10 +264,10 @@
                   <Font name="Calibri Light Italic" size="15.0" />
                </font>
             </TextField>
-            <Label layoutX="641.0" layoutY="374.0" text="Fecha Ingreso:" />
-            <JFXDatePicker defaultColor="#092489" layoutX="703.0" layoutY="401.0" />
-            <Label layoutX="645.0" layoutY="307.0" text="Fecha Salida:" />
-            <JFXDatePicker defaultColor="#092489" layoutX="711.0" layoutY="326.0" />
+            <Label layoutX="643.0" layoutY="320.0" text="Fecha Ingreso:" />
+            <JFXDatePicker defaultColor="#092489" layoutX="705.0" layoutY="347.0" />
+            <Label layoutX="641.0" layoutY="395.0" text="Fecha Salida:" />
+            <JFXDatePicker defaultColor="#092489" layoutX="707.0" layoutY="414.0" />
             <Label layoutX="22.0" layoutY="28.0" text="CAMPO VEHICULAR ASIGNADO:" />
             <TextField layoutX="199.0" layoutY="21.0" prefHeight="31.0" prefWidth="265.0" promptText="001" style="-fx-border-color: #092489;">
                <font>
