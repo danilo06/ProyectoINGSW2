@@ -15,32 +15,32 @@ public class Residente extends Persona {
 	}
 
 	/**
-	 * 
+	 *	 Atributo publico residente 
 	 */
 	private String tipoDocumento;
 
 	/**
-	 * 
+	 *  Atributo privado tipoDocumento
 	 */
 	private Integer edad;
 
 	/**
-	 * 
+	 *  Atributo privado edad
 	 */
 	private String tipoResidente;
 
 	/**
-	 * 
+	 *  Atributo privado tipoResidente
 	 */
 	private String torre;
 
 	/**
-	 * 
+	 *  Atributo privado Torre
 	 */
 	private String apartamento;
 
 	/**
-	 * 
+	 *  Atributo privado apartamento
 	 */
 	private String genero;
 
