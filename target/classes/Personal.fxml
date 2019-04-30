@@ -213,6 +213,20 @@
             <JFXDatePicker defaultColor="#092489" layoutX="575.0" layoutY="462.0" />
             <Label layoutX="509.0" layoutY="229.0" text="Fecha de Nacimiento:" />
             <JFXDatePicker defaultColor="#092489" layoutX="626.0" layoutY="225.0" />
+            <Button graphicTextGap="10.0" layoutX="829.0" layoutY="454.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="138.0" style="-fx-background-color: #092489;" text="Guardar" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="30" wrappingWidth="42.428571701049805" />
+               </graphic>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <Pane fx:id="pnlStatus" layoutX="254.0" layoutY="64.0" prefHeight="137.0" prefWidth="1026.0" style="-fx-background-color: #4E91D6;" AnchorPane.leftAnchor="254.0" AnchorPane.rightAnchor="0.0">

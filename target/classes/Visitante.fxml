@@ -23,7 +23,7 @@
    <children>
       <AnchorPane fx:id="panel21" layoutX="290.0" layoutY="201.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Button graphicTextGap="10.0" layoutX="135.0" layoutY="81.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="227.0" style="-fx-background-color: #092489;" text="Registrar Visitante" textFill="WHITE">
+            <Button fx:id="btnPanel1RegistrarVisitante" graphicTextGap="10.0" layoutX="135.0" layoutY="81.0" mnemonicParsing="false" onAction="#btnPanel1RegistrarVisitanteAction" prefHeight="40.0" prefWidth="227.0" style="-fx-background-color: #092489;" text="Registrar Visitante" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -81,6 +81,7 @@
                <padding>
                   <Insets bottom="4.0" left="2.0" />
                </padding></CheckBox>
+            <FontAwesomeIconView fill="WHITE" glyphName="MALE" layoutX="163.0" layoutY="111.0" size="30" />
          </children>
       </AnchorPane>
       <VBox prefHeight="727.0" prefWidth="255.0" style="-fx-background-color: #092489;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
