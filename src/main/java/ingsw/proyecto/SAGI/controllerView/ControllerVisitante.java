@@ -137,6 +137,7 @@ public class ControllerVisitante implements Initializable {
 	 void btnPanel1RegistrarVisitanteAction(ActionEvent event) {
 		Notifications notificationBuilder = Notifications.create()
 				.title("AVISO")
+				
 				.text("Visitante Registrado")
 				.graphic(null)
 				.hideAfter(Duration.seconds(5))
