@@ -93,11 +93,8 @@ public class ControllerCerrarSesion implements Initializable {
 		});
 		notificationBuilder.darkStyle();
 		notificationBuilder.showWarning();
-			Thread.sleep(5000);
 			ChangeScenes change = new ChangeScenes();
 			change.changeScenes("/Login.fxml", btnVisitantes);
-
-		
 	}
 
 	@FXML

@@ -29,6 +29,7 @@ public class ChangeScenes {
     	Parent p = Loader.getRoot();
     	Stage stage = (Stage) btn.getScene().getWindow();
     	stage.setScene(new Scene(p));
+    	stage.centerOnScreen();
     	stage.show();	
 	}
 	
@@ -58,6 +59,7 @@ public class ChangeScenes {
 		});
     	//-----------------------------------
     	stage.setScene(new Scene(p));
+    	stage.centerOnScreen();
     	stage.show();	
 	}
 }
