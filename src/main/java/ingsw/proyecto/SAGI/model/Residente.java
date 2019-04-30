@@ -108,7 +108,9 @@ public class Residente extends Persona {
 		this.tipoResidente = tipoResidente;
 	}
 
-
+	/**
+	 * Get and Setters
+	 */
 
 	public String getTorre() {
 		return torre;
@@ -144,7 +146,9 @@ public class Residente extends Persona {
 		this.genero = genero;
 	}
 
-	
+	/**
+	 * To String para imprimir todos los datos del residente
+	 */
 
 	@Override
 	public String toString() {
@@ -165,6 +169,11 @@ public class Residente extends Persona {
 		private String nombre;
 		private String numDocumento;
 		private String celular;
+		
+		
+		/**
+		 * Get and Setters
+		 */ 
 		
 		public ResidenteBuilder() {
 		}
@@ -214,6 +223,9 @@ public class Residente extends Persona {
 			return this;
 		}
 		
+		/**
+		 * To String para imprimir todos los datos del residente
+		 */
 		@Override
 		public Residente build() {
 			return new Residente (nombre, numDocumento,celular, tipoDocumento, edad,
