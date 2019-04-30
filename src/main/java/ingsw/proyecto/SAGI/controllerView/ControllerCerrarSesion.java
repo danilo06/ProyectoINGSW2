@@ -29,7 +29,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import org.controlsfx.control.Notifications;
 
 public class ControllerCerrarSesion implements Initializable {
@@ -79,7 +78,7 @@ public class ControllerCerrarSesion implements Initializable {
 	private Boolean fullScreen = false;
 	
 	@FXML
-	private void btnPanel1CerrarSesionAction(ActionEvent event) {
+	private void btnPanel1CerrarSesionAction(ActionEvent event) throws InterruptedException {
 		Notifications notificationBuilder = Notifications.create()
 				.title("CERRAR SESIÓN")
 				.text("Cerrando Sesión")
@@ -94,6 +93,11 @@ public class ControllerCerrarSesion implements Initializable {
 		});
 		notificationBuilder.darkStyle();
 		notificationBuilder.showWarning();
+			Thread.sleep(5000);
+			ChangeScenes change = new ChangeScenes();
+			change.changeScenes("/Login.fxml", btnVisitantes);
+
+		
 	}
 
 	@FXML

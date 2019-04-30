@@ -1,4 +1,4 @@
-package ingsw.proyecto.SAGI.dataReporte.factoryMethod;
+package ingsw.proyecto.SAGI.factoryMethod.dao;
 
 import java.util.*;
 

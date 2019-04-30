@@ -38,7 +38,7 @@ public class Main2 extends Application {
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.initStyle(StageStyle.UNDECORATED);
-		this.stage = stage;
+		Main2.stage = stage;
 		stage.show();
 
 		// animate the stage

@@ -34,5 +34,6 @@
 	<classpathentry kind="lib" path="src/main/resources/library/fontawesomefx-8.9.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/library/gradle-wrapper.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/library/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/library/controlsfx-8.40.15.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

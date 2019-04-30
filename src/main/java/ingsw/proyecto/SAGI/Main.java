@@ -19,7 +19,7 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
-        this.stage = stage;
+        Main.stage = stage;
         stage.show();
     }
 
