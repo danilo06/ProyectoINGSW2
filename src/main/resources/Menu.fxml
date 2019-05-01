@@ -28,7 +28,7 @@
                   <Pane prefHeight="137.0" prefWidth="255.0" style="-fx-background-color: #050472;">
                      <children>
                         <FontAwesomeIconView fill="WHITE" glyphName="XING_SQUARE" layoutX="50.0" layoutY="85.0" size="50" text="" wrappingWidth="44.428571701049805" />
-                        <Label layoutX="101.0" layoutY="31.0" prefHeight="76.0" prefWidth="138.0" text="SAGI" textFill="WHITE">
+                        <Label layoutX="101.0" layoutY="31.0" prefHeight="76.0" prefWidth="138.0" text="INGSW2" textFill="WHITE">
                            <font>
                               <Font name="Impact" size="61.0" />
                            </font>
