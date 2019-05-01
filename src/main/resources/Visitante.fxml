@@ -34,7 +34,7 @@
                   <Font name="Calibri Light" size="13.0" />
                </font>
             </Button>
-            <Label layoutX="82.0" layoutY="172.0" text="Nombre:" />
+            <Label layoutX="82.0" layoutY="172.0" text="INGSW2:" />
             <Label layoutX="411.0" layoutY="240.0" text="Documento:" />
             <Label layoutX="14.0" layoutY="316.0" text="Telefono de Contacto: " />
             <Label layoutX="20.0" layoutY="242.0" text="Tipo de Documento:" />
