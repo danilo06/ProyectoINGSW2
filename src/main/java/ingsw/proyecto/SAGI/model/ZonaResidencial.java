@@ -25,6 +25,8 @@ public class ZonaResidencial {
 
 	private List<Visitante> visitante;
 	private List<ingresoMes> cuenta;
+	private List<ingresoMes> semana;
+	private List<ingresoMes> plata;
 
 	private BaseDatos baseDatos;
 
@@ -49,12 +51,30 @@ public class ZonaResidencial {
 		this.visitante = baseDatos.getVisitantes();
 		this.users = baseDatos.getUsers();
 		this.cuenta = baseDatos.getCuenta();
+		this.semana = baseDatos.getSemana();
+		this.plata = baseDatos.getPlata();
 	}
 
 	private static synchronized void createInstance() {
 		if (zonaResidencial == null) {
 			zonaResidencial = new ZonaResidencial();
 		}
+	}
+
+	public List<ingresoMes> getPlata() {
+		return plata;
+	}
+
+	public void setPlata(List<ingresoMes> plata) {
+		this.plata = plata;
+	}
+
+	public List<ingresoMes> getSemana() {
+		return semana;
+	}
+
+	public void setSemana(List<ingresoMes> semana) {
+		this.semana = semana;
 	}
 
 	public void generarSegmentos() {

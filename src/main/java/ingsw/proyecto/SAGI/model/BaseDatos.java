@@ -10,6 +10,8 @@ public class BaseDatos {
 	public static List<Visitante> visitantes = new ArrayList<Visitante>();
 	public static List<UserLogin> users = new ArrayList<UserLogin>();
 	public static List<ingresoMes> cuenta = new ArrayList<ingresoMes>();
+	public static List<ingresoMes> semana = new ArrayList<ingresoMes>();
+	public static List<ingresoMes> plata = new ArrayList<ingresoMes>();
 
 	public BaseDatos() {
 		cargeLista();
@@ -20,9 +22,25 @@ public class BaseDatos {
 		generateEmpleado();
 		generateUsers();
 		generatecuenta();
+		generateSemana();
+		generatePlata();
 	}
-	
-	
+
+	public static List<ingresoMes> getPlata() {
+		return plata;
+	}
+
+	public static void setPlata(List<ingresoMes> plata) {
+		BaseDatos.plata = plata;
+	}
+
+	public static List<ingresoMes> getSemana() {
+		return semana;
+	}
+
+	public static void setSemana(List<ingresoMes> semana) {
+		BaseDatos.semana = semana;
+	}
 
 	public static List<ingresoMes> getCuenta() {
 		return cuenta;
@@ -41,8 +59,6 @@ public class BaseDatos {
 		return false;
 	}
 
-	
-	
 	public static List<UserLogin> getUsers() {
 		return users;
 	}
@@ -192,34 +208,87 @@ public class BaseDatos {
 		empleados.add(emp);
 	}
 
-	private void generatecuenta(){
+	private void generatecuenta() {
 		ingresoMes ingreso = new ingresoMes();
 		ingreso.setAportes(1000000);
 		ingreso.setDeuda(700000);
 		ingreso.setMes("Enero");
 		cuenta.add(ingreso);
-		 ingreso = new ingresoMes();
-		ingreso.setAportes(1500000);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(1300000);
 		ingreso.setDeuda(1000000);
 		ingreso.setMes("Febrero");
 		cuenta.add(ingreso);
-		 ingreso = new ingresoMes();
+		ingreso = new ingresoMes();
 		ingreso.setAportes(1200000);
 		ingreso.setDeuda(500000);
 		ingreso.setMes("Marzo");
 		cuenta.add(ingreso);
-		 ingreso = new ingresoMes();
+		ingreso = new ingresoMes();
 		ingreso.setAportes(500000);
 		ingreso.setDeuda(800000);
 		ingreso.setMes("Abril");
 		cuenta.add(ingreso);
-		 ingreso = new ingresoMes();
-		ingreso.setAportes(800000);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(860000);
 		ingreso.setDeuda(800000);
 		ingreso.setMes("Mayo");
 		cuenta.add(ingreso);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(1000000);
+		ingreso.setDeuda(800000);
+		ingreso.setMes("Junio");
+		cuenta.add(ingreso);
 	}
-	
+
+	private void generateSemana() {
+		ingresoMes ingreso = new ingresoMes();
+		ingreso.setAportes(10);
+		ingreso.setMes("Lunes");
+		semana.add(ingreso);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(7);
+		ingreso.setMes("Martes");
+		semana.add(ingreso);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(8);
+		ingreso.setMes("Miercoles");
+		semana.add(ingreso);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(8);
+		ingreso.setMes("Jueves");
+		semana.add(ingreso);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(12);
+		ingreso.setMes("Viernes");
+		semana.add(ingreso);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(16);
+		ingreso.setMes("Sabado");
+		semana.add(ingreso);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(17);
+		ingreso.setMes("Domingo");
+		semana.add(ingreso);
+	}
+
+	public void generatePlata() {
+		ingresoMes ingreso = new ingresoMes();
+		ingreso = new ingresoMes();
+		ingreso.setAportes(1500000);
+		ingreso.setMes("Parqueadero - Motos");
+		plata.add(ingreso);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(3000000);
+		ingreso.setMes("Parqueadero - Carros");
+		plata.add(ingreso);
+		ingreso = new ingresoMes();
+		ingreso.setAportes(5000000);
+		ingreso.setMes("Administracion");
+		plata.add(ingreso);
+
+	}
+
 	private void generateVisitante() {
 	}
 
