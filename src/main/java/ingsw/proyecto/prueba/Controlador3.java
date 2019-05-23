@@ -77,7 +77,7 @@ public class Controlador3 implements Initializable{
     
     	AreaChartX = new CategoryAxis();
     	AreaChartY = new NumberAxis(0, 15, 2.5); 
-    	AreaChart<String, Number> areaChart = new AreaChart(AreaChartX, AreaChartY);
+    	//AreaChart<String, Number> areaChart = new AreaChart(AreaChartX, AreaChartY);
     	
     	XYChart.Series series1 = new XYChart.Series();  
     	series1.setName("John"); 

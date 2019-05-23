@@ -10,6 +10,7 @@ import animatefx.animation.Pulse;
 import animatefx.animation.Swing;
 import animatefx.animation.Tada;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import ingsw.proyecto.SAGI.model.ZonaResidencial;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,6 +21,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -139,6 +141,8 @@ public class ControllerAdministracion implements Initializable {
 
     @FXML
     private PieChart pieChart;
+    
+    private ZonaResidencial zonaResidencial = ZonaResidencial.getInstance();
 
     @FXML
     void btnGenerarPagoAction(ActionEvent event) {
@@ -210,6 +214,7 @@ public class ControllerAdministracion implements Initializable {
 		new Flash(pnlStatus).play();
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		pnlStatus.setBackground(
@@ -220,6 +225,21 @@ public class ControllerAdministracion implements Initializable {
 		changePanel(panel4);
 		changePanel(panel1);
 		panel1.toFront();
+		//-------------------------------------------------------
+
+		
+	    ChartXMorosos = new CategoryAxis();
+	    ChartYMorosos = new NumberAxis(0, 15, 2.5); 
+    	
+    	XYChart.Series series1 = new XYChart.Series();  
+    	series1.setName("Al día");
+     	XYChart.Series series2 = new XYChart.Series();    	
+    	series2.setName("En Mora");
+    	for (int i=0;i<zonaResidencial.getCuenta().size();i++) {
+    		series1.getData().add(new XYChart.Data((zonaResidencial.getCuenta().get(i).getMes()), zonaResidencial.getCuenta().get(i).getAportes()));
+    		series2.getData().add(new XYChart.Data((zonaResidencial.getCuenta().get(i).getMes()), zonaResidencial.getCuenta().get(i).getDeuda())); 
+    	}   
+    	chartMorososPagos.getData().addAll(series1,series2);
 	}
 	
 	private void changePanel(AnchorPane panel) {

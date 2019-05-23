@@ -17,7 +17,8 @@ public class MainTest extends Application {
 	 */
 	@Override
 	public void start(Stage PrimaryStage) throws Exception {
-	    Parent root = FXMLLoader.load(getClass().getResource("/Administracion.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/Administracion.fxml"));
+	    //Parent root = FXMLLoader.load(getClass().getResource("/grafica.fxml"));
 	    Scene scene = new Scene(root);
 	    PrimaryStage.setScene(scene);
 	    PrimaryStage.initStyle(StageStyle.UNDECORATED); // para eliminar bordes del sistema

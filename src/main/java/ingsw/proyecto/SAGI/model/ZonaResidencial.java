@@ -24,6 +24,7 @@ public class ZonaResidencial {
 	private Parqueadero parqueadero;
 
 	private List<Visitante> visitante;
+	private List<ingresoMes> cuenta;
 
 	private BaseDatos baseDatos;
 
@@ -32,6 +33,14 @@ public class ZonaResidencial {
 	private int segmentoC;
 	private int segmentoD;
 
+	public List<ingresoMes> getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(List<ingresoMes> cuenta) {
+		this.cuenta = cuenta;
+	}
+
 	@SuppressWarnings("static-access")
 	private ZonaResidencial() {
 		baseDatos = new BaseDatos();
@@ -39,6 +48,7 @@ public class ZonaResidencial {
 		this.empleado = baseDatos.getEmpleados();
 		this.visitante = baseDatos.getVisitantes();
 		this.users = baseDatos.getUsers();
+		this.cuenta = baseDatos.getCuenta();
 	}
 
 	private static synchronized void createInstance() {
@@ -179,7 +189,7 @@ public class ZonaResidencial {
 	public void setBaseDatos(BaseDatos baseDatos) {
 		this.baseDatos = baseDatos;
 	}
-	
+
 	public void addResidente(Residente residente) {
 		this.residente.add(residente);
 	}

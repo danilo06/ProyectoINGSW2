@@ -9,14 +9,27 @@ public class BaseDatos {
 	public static List<Residente> residentes = new ArrayList<Residente>();
 	public static List<Visitante> visitantes = new ArrayList<Visitante>();
 	public static List<UserLogin> users = new ArrayList<UserLogin>();
+	public static List<ingresoMes> cuenta = new ArrayList<ingresoMes>();
 
 	public BaseDatos() {
+		cargeLista();
 	}
 
 	public void cargeLista() {
 		generateResidente();
 		generateEmpleado();
 		generateUsers();
+		generatecuenta();
+	}
+	
+	
+
+	public static List<ingresoMes> getCuenta() {
+		return cuenta;
+	}
+
+	public static void setCuenta(List<ingresoMes> cuenta) {
+		BaseDatos.cuenta = cuenta;
 	}
 
 	public boolean validarUserLogin(String user) {
@@ -179,6 +192,34 @@ public class BaseDatos {
 		empleados.add(emp);
 	}
 
+	private void generatecuenta(){
+		ingresoMes ingreso = new ingresoMes();
+		ingreso.setAportes(1000000);
+		ingreso.setDeuda(700000);
+		ingreso.setMes("Enero");
+		cuenta.add(ingreso);
+		 ingreso = new ingresoMes();
+		ingreso.setAportes(1500000);
+		ingreso.setDeuda(1000000);
+		ingreso.setMes("Febrero");
+		cuenta.add(ingreso);
+		 ingreso = new ingresoMes();
+		ingreso.setAportes(1200000);
+		ingreso.setDeuda(500000);
+		ingreso.setMes("Marzo");
+		cuenta.add(ingreso);
+		 ingreso = new ingresoMes();
+		ingreso.setAportes(500000);
+		ingreso.setDeuda(800000);
+		ingreso.setMes("Abril");
+		cuenta.add(ingreso);
+		 ingreso = new ingresoMes();
+		ingreso.setAportes(800000);
+		ingreso.setDeuda(800000);
+		ingreso.setMes("Mayo");
+		cuenta.add(ingreso);
+	}
+	
 	private void generateVisitante() {
 	}
 
