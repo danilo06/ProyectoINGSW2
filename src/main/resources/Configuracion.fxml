@@ -4,14 +4,11 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -133,30 +130,6 @@
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="340.0" layoutY="201.0" prefHeight="511.0" prefWidth="920.0">
-         <children>
-            <StackPane prefHeight="511.0" prefWidth="920.0">
-               <children>
-                  <GridPane fx:id="pnParqueaderos" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="552.0" prefWidth="920.0" style="-fx-background-color: #ffff;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="479.3333282470703" minHeight="10.0" prefHeight="433.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="76.0" prefWidth="1000.0" text="CONFIGURACION" textFill="#199138" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="Impact" size="61.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </GridPane>
-               </children>
-            </StackPane>
-         </children>
-      </VBox>
       <Pane fx:id="pnlStatus" layoutX="254.0" layoutY="64.0" prefHeight="137.0" prefWidth="1026.0" style="-fx-background-color: #4E91D6;" AnchorPane.leftAnchor="254.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label fx:id="lblStatus" layoutX="43.0" layoutY="69.0" text="Configuracion" textFill="WHITE">
@@ -169,62 +142,6 @@
                   <Font name="Impact" size="11.0" />
                </font>
             </Label>
-            <Button graphicTextGap="10.0" layoutX="482.0" layoutY="89.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="162.0" style="-fx-background-color: #092489;" text="Buscar Residente" textFill="WHITE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
-               </effect>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" wrappingWidth="42.428571701049805" />
-               </graphic>
-               <font>
-                  <Font name="Calibri Light" size="13.0" />
-               </font>
-            </Button>
-            <Button graphicTextGap="10.0" layoutX="297.0" layoutY="89.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="176.0" style="-fx-background-color: #092489;" text="Agregar Residente" textFill="WHITE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
-               </effect>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="30" wrappingWidth="42.428571701049805" />
-               </graphic>
-               <font>
-                  <Font name="Calibri Light" size="13.0" />
-               </font>
-            </Button>
-            <Button graphicTextGap="10.0" layoutX="651.0" layoutY="89.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="162.0" style="-fx-background-color: #092489;" text=" Reporte" textFill="WHITE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
-               </effect>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="BOOK" size="30" wrappingWidth="42.428571701049805" />
-               </graphic>
-               <font>
-                  <Font name="Calibri Light" size="13.0" />
-               </font>
-            </Button>
-            <Button graphicTextGap="10.0" layoutX="825.0" layoutY="89.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="187.0" style="-fx-background-color: #092489;" text="Población Residentes" textFill="WHITE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
-               </effect>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="SIGNAL" size="30" wrappingWidth="42.428571701049805" />
-               </graphic>
-               <font>
-                  <Font name="Calibri Light" size="13.0" />
-               </font>
-            </Button>
          </children>
       </Pane>
       <FontAwesomeIconView fx:id="btnClose" fill="#cd1c1c" glyphName="CLOSE" layoutX="1260.0" layoutY="25.0" onMouseClicked="#handleClose" size="20" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="7.0" />
@@ -234,5 +151,97 @@
          </font>
       </Label>
       <FontAwesomeIconView fx:id="btnExpand" fill="#cd1c1c" glyphName="EXPAND" layoutX="1234.0" layoutY="24.0" onMouseClicked="#handleExpand" size="20" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="7.0" />
+      <AnchorPane fx:id="panel1" layoutX="251.0" layoutY="43.0" prefHeight="440.0" prefWidth="954.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="206.0" layoutY="26.0" prefHeight="58.0" prefWidth="337.0" text="En este menu, podra agregar tipos de opciones segun las necesidades del negocio" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="321.0" layoutY="115.0" prefHeight="21.0" prefWidth="187.0" />
+            <Label layoutX="189.0" layoutY="115.0" text="Nombre de horario" />
+            <TextField layoutX="321.0" layoutY="170.0" prefHeight="21.0" prefWidth="187.0" />
+            <Label layoutX="189.0" layoutY="170.0" text="Categoria de empleado" />
+            <TextField layoutX="321.0" layoutY="230.0" prefHeight="21.0" prefWidth="187.0" />
+            <Label layoutX="189.0" layoutY="230.0" text="Cargo empleado" />
+            <TextField layoutX="321.0" layoutY="299.0" prefHeight="21.0" prefWidth="187.0" />
+            <Label layoutX="189.0" layoutY="299.0" text="Tipo de documento" />
+            <TextField layoutX="321.0" layoutY="369.0" prefHeight="21.0" prefWidth="187.0" />
+            <Label layoutX="189.0" layoutY="369.0" text="Horario laboral" />
+            <Button fx:id="btn1" graphicTextGap="10.0" layoutX="529.0" layoutY="114.0" mnemonicParsing="false" onAction="#GN1" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #092489;" text="Generar" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="10" wrappingWidth="22.428571701049805" />
+               </graphic>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn2" graphicTextGap="10.0" layoutX="529.0" layoutY="169.0" mnemonicParsing="false" onAction="#GN2" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #092489;" text="Generar" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="10" wrappingWidth="22.428571701049805" />
+               </graphic>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn3" graphicTextGap="10.0" layoutX="529.0" layoutY="229.0" mnemonicParsing="false" onAction="#GN3" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #092489;" text="Generar" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="10" wrappingWidth="22.428571701049805" />
+               </graphic>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn4" graphicTextGap="10.0" layoutX="529.0" layoutY="298.0" mnemonicParsing="false" onAction="#GN4" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #092489;" text="Generar" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="10" wrappingWidth="22.428571701049805" />
+               </graphic>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn5" graphicTextGap="10.0" layoutX="529.0" layoutY="368.0" mnemonicParsing="false" onAction="#GN5" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #092489;" text="Generar" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="10" wrappingWidth="22.428571701049805" />
+               </graphic>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="#f80303" glyphName="GEAR" layoutX="859.0" layoutY="124.0" size="80" />
+            <FontAwesomeIconView fill="#310ff5" glyphName="GEAR" layoutX="893.0" layoutY="180.0" size="80" />
+            <FontAwesomeIconView glyphName="GEAR" layoutX="795.0" layoutY="218.0" size="150" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
