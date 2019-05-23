@@ -2,9 +2,15 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -152,29 +158,28 @@
          </font>
       </Label>
       <FontAwesomeIconView fx:id="btnExpand" fill="#cd1c1c" glyphName="EXPAND" layoutX="1234.0" layoutY="24.0" onMouseClicked="#handleExpand" size="20" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="7.0" />
-      <AnchorPane fx:id="panel2" layoutX="255.0" layoutY="201.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane fx:id="panel1" layoutX="255.0" layoutY="201.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Label layoutX="67.0" layoutY="126.0" text="Nombre:" />
-            <Label layoutX="51.0" layoutY="194.0" text="Documento:" />
-            <Label layoutX="51.0" layoutY="429.0" text="ESTADO:" />
-            <TextField layoutX="124.0" layoutY="119.0" prefHeight="31.0" prefWidth="265.0" promptText="Nombre del Residente" style="-fx-border-color: #092489;">
+            <Label layoutX="132.0" layoutY="146.0" text="Nombre:" />
+            <Label layoutX="116.0" layoutY="214.0" text="Documento:" />
+            <TextField fx:id="txtNombreResidente" layoutX="189.0" layoutY="139.0" prefHeight="31.0" prefWidth="265.0" promptText="Nombre del Residente" style="-fx-border-color: #092489;">
                <font>
                   <Font name="Calibri Light Italic" size="15.0" />
                </font>
             </TextField>
-            <TextField layoutX="125.0" layoutY="187.0" prefHeight="31.0" prefWidth="204.0" promptText="Documento del Residente" style="-fx-border-color: #092489;">
+            <TextField fx:id="txtDocumento" layoutX="190.0" layoutY="207.0" prefHeight="31.0" prefWidth="204.0" promptText="Documento del Residente" style="-fx-border-color: #092489;">
                <font>
                   <Font name="Calibri Light Italic" size="15.0" />
                </font>
             </TextField>
-            <FontAwesomeIconView glyphName="FILE" layoutX="447.0" layoutY="239.0" size="150" />
+            <FontAwesomeIconView glyphName="FILE" layoutX="726.0" layoutY="220.0" size="150" />
             <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="154.0" layoutY="69.0" size="30" />
             <Label layoutX="31.0" layoutY="19.0" text="PAGOS RESIDENTE">
                <font>
                   <Font name="Calibri Light" size="25.0" />
                </font>
             </Label>
-            <Button graphicTextGap="10.0" layoutX="124.0" layoutY="251.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="176.0" style="-fx-background-color: #092489;" text="Verificar Pago" textFill="WHITE">
+            <Button fx:id="btnGenerarPago" graphicTextGap="10.0" layoutX="194.0" layoutY="323.0" mnemonicParsing="false" onAction="#btnGenerarPagoAction" prefHeight="41.0" prefWidth="176.0" style="-fx-background-color: #092489;" text="Generar Pago" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -188,22 +193,7 @@
                   <Font name="Calibri Light" size="13.0" />
                </font>
             </Button>
-            <TextArea layoutX="108.0" layoutY="417.0" prefHeight="41.0" prefWidth="265.0" style="-fx-border-color: #092489;" />
-            <Button graphicTextGap="10.0" layoutX="735.0" layoutY="263.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="162.0" style="-fx-background-color: #092489;" text=" Reporte" textFill="WHITE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
-               </effect>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="BOOK" size="30" wrappingWidth="42.428571701049805" />
-               </graphic>
-               <font>
-                  <Font name="Calibri Light" size="13.0" />
-               </font>
-            </Button>
-            <Button graphicTextGap="10.0" layoutX="688.0" layoutY="182.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="255.0" style="-fx-background-color: #092489;" text="Estadistica residentes en mora" textFill="WHITE">
+            <Button fx:id="btnReporteEstadistico" graphicTextGap="10.0" layoutX="652.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnReporteEstadisticoAction" prefHeight="41.0" prefWidth="255.0" style="-fx-background-color: #092489;" text="Reporte Estadistico" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -217,7 +207,19 @@
                   <Font name="Calibri Light" size="13.0" />
                </font>
             </Button>
-            <Button graphicTextGap="10.0" layoutX="714.0" layoutY="346.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="204.0" style="-fx-background-color: #092489;" text="Calendario de pagos" textFill="WHITE">
+            <ComboBox fx:id="cboxConcepto" layoutX="217.0" layoutY="267.0" prefWidth="150.0" />
+            <Label layoutX="127.0" layoutY="273.0" text="Concepto" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panel2" layoutX="1472.0" layoutY="207.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="154.0" layoutY="69.0" size="30" />
+            <Label layoutX="31.0" layoutY="19.0" text="Residenetes al dia vs Morosos">
+               <font>
+                  <Font name="Calibri Light" size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnSiguienteMorososPagos" graphicTextGap="10.0" layoutX="730.0" layoutY="296.0" mnemonicParsing="false" onAction="#btnSiguienteMorososPagosAction" prefHeight="41.0" prefWidth="255.0" style="-fx-background-color: #092489;" text="Siguiente" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -225,12 +227,100 @@
                   <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
                </effect>
                <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="30" wrappingWidth="42.428571701049805" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="SIGNAL" size="30" wrappingWidth="42.428571701049805" />
                </graphic>
                <font>
                   <Font name="Calibri Light" size="13.0" />
                </font>
             </Button>
+            <AreaChart fx:id="chartMorososPagos" layoutX="16.0" layoutY="60.0" prefHeight="442.0" prefWidth="688.0">
+              <xAxis>
+                <CategoryAxis fx:id="ChartXMorosos" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="ChartYMorosos" side="LEFT" />
+              </yAxis>
+            </AreaChart>
+            <Label layoutX="742.0" layoutY="145.0" prefHeight="123.0" prefWidth="221.0" text="Relacion entre la totalidadde residentes, que pagan cuota de administracion, y aquellos que se encuentran en mora. " textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panel3" layoutX="2764.0" layoutY="207.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="154.0" layoutY="69.0" size="30" />
+            <Label layoutX="31.0" layoutY="19.0" text="Frecuencia de visitas - Ultima semana">
+               <font>
+                  <Font name="Calibri Light" size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnSiguienteFrecuenciaVisitas" graphicTextGap="10.0" layoutX="730.0" layoutY="296.0" mnemonicParsing="false" onAction="#btnSiguienteFrecuenciaVisitasAction" prefHeight="41.0" prefWidth="255.0" style="-fx-background-color: #092489;" text="Siguiente" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SIGNAL" size="30" wrappingWidth="42.428571701049805" />
+               </graphic>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="753.0" layoutY="189.0" prefHeight="76.0" prefWidth="221.0" text="Relacion entre la totalidadde visitas presentadas" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <LineChart fx:id="chartFrecuenciaVisitantes" layoutX="31.0" layoutY="68.0" prefHeight="400.0" prefWidth="678.0">
+              <xAxis>
+                <CategoryAxis fx:id="chartXFrecienciaVisitas" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="chartYFrecienciaVisitas" side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panel4" layoutX="4094.0" layoutY="195.0" prefHeight="519.0" prefWidth="990.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="154.0" layoutY="69.0" size="30" />
+            <Label layoutX="31.0" layoutY="19.0" text="Ingresos por concepto">
+               <font>
+                  <Font name="Calibri Light" size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnIngresoConcepto" graphicTextGap="10.0" layoutX="673.0" layoutY="433.0" mnemonicParsing="false" onAction="#btnIngresoConceptoAction" prefHeight="41.0" prefWidth="255.0" style="-fx-background-color: #092489;" text="Siguiente" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0281ff" height="25.45" radius="10.309999999999999" width="17.79" />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SIGNAL" size="30" wrappingWidth="42.428571701049805" />
+               </graphic>
+               <font>
+                  <Font name="Calibri Light" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="684.0" layoutY="339.0" prefHeight="85.0" prefWidth="221.0" text="Descripcion de ingresos por conceptos principales" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <BarChart fx:id="chatConcepto" layoutX="36.0" layoutY="101.0">
+              <xAxis>
+                <CategoryAxis fx:id="chatXConcepto" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="chatYConcepto" side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <PieChart fx:id="pieChart" layoutX="597.0" layoutY="49.0" prefHeight="285.0" prefWidth="363.0" />
          </children>
       </AnchorPane>
    </children>

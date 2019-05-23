@@ -71,7 +71,8 @@ public class Controlador3 implements Initializable{
     @FXML
     private Button btn;
 
-    @FXML
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@FXML
     void btn(ActionEvent event) {
     
     	AreaChartX = new CategoryAxis();
@@ -80,24 +81,23 @@ public class Controlador3 implements Initializable{
     	
     	XYChart.Series series1 = new XYChart.Series();  
     	series1.setName("John"); 
-    	series1.getData().add(new XYChart.Data("Monday", 3)); 
-    	series1.getData().add(new XYChart.Data("Tuesday", 4)); 
-    	series1.getData().add(new XYChart.Data("Wednesday", 3)); 
-    	series1.getData().add(new XYChart.Data("Thursday", 5)); 
-    	series1.getData().add(new XYChart.Data("Friday", 4)); 
-    	series1.getData().add(new XYChart.Data("Saturday", 10)); 
-    	series1.getData().add(new XYChart.Data("Sunday", 12));  
+    	series1.getData().add(new XYChart.Data("Enero", 3)); 
+    	series1.getData().add(new XYChart.Data("Febrero", 4)); 
+    	series1.getData().add(new XYChart.Data("Marzo", 3)); 
+    	series1.getData().add(new XYChart.Data("Abril", 5)); 
+    	series1.getData().add(new XYChart.Data("Mayo", 4)); 
+    	series1.getData().add(new XYChart.Data("Junio", 10)); 
+    	series1.getData().add(new XYChart.Data("Julio", 12));  
 
-    	XYChart.Series series2 = new XYChart.Series(); 
+    	XYChart.Series series2 = new XYChart.Series();    	
     	series2.setName("Jane"); 
-    	series2.getData().add(new XYChart.Data("Monday", 1)); 
-    	series2.getData().add(new XYChart.Data("Tuesday", 3)); 
-    	series2.getData().add(new XYChart.Data("Wednesday", 4));  
-
-    	series2.getData().add(new XYChart.Data("Thursday", 3)); 
-    	series2.getData().add(new XYChart.Data("Friday", 3)); 
-    	series2.getData().add(new XYChart.Data("Saturday", 5)); 
-    	series2.getData().add(new XYChart.Data("Sunday", 4)); 
+    	series2.getData().add(new XYChart.Data("Enero", -1)); 
+    	series2.getData().add(new XYChart.Data("Febrero", -3)); 
+    	series2.getData().add(new XYChart.Data("Marzo", -4)); 
+    	series2.getData().add(new XYChart.Data("Abril", -3)); 
+    	series2.getData().add(new XYChart.Data("Mayo", -3)); 
+    	series2.getData().add(new XYChart.Data("Junio", -5)); 
+    	series2.getData().add(new XYChart.Data("Julio", -4));  
         
         AreaChart.getData().addAll(series1,series2);
 
