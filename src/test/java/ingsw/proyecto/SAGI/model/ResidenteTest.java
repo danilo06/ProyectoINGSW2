@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class ResidenteTest {
+import junit.framework.TestCase;
+
+class ResidenteTest extends TestCase{
 
 	Residente residente = new Residente();
 	
