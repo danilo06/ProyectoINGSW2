@@ -13,7 +13,6 @@ public class UserLoginTest extends TestCase {
 		userLogin.setUser("danilo06");
 		userLogin.setPassword("root");
 		assertFalse(userLogin.userValidate("sadasdasdasdas", "root"));
-		System.out.println("No lo hace");
 	}
 
 	@Test
@@ -21,7 +20,6 @@ public class UserLoginTest extends TestCase {
 		userLogin.setUser("danilo06");
 		userLogin.setPassword("root");
 		assertTrue(userLogin.userValidate("danilo06", "root"));
-		System.out.println("Si lo hace");
 	}
 	
 }
