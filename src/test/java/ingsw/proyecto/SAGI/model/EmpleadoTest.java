@@ -24,10 +24,9 @@ class EmpleadoTest extends TestCase{
 	    }
 
 	    @Test
-	    public void crearEmpleadoBuilderCorreoTest() {
-	        empleado = new Empleado.EmpleadoBuilder().setCargo("Vigilante").setCelular("345839583").setEmail("carlos@uan.edu.co")
-	                .setEstado("Activo").setFechaIngreso(null).setFechaNacimiento(null).setGenero("Hombre").build();
-	        assertTrue(empleado.getGenero().equals("Hombre"));
+	    public void crearEmpleadoBuilderNullTest() {
+	        assertNull(empleado.getFechaIngreso());
+
 	    }
 
 }
