@@ -39,14 +39,6 @@ public class Controlador implements Initializable {
 
     @FXML
     void BtnNextAction(ActionEvent event) throws IOException {
-    	/*
-    	Stage stage = (Stage) BtnNext.getScene().getWindow();
-    	Parent root = FXMLLoader.load(getClass().getResource("/view2.fxml"));
-    	Scene scene = new Scene(root);
-    	stage.setScene(scene);
-    	stage.show();
-    	//stage.setFullScreen(true);
-    	*/
     	FXMLLoader Loader = new FXMLLoader();
     	Loader.setLocation(getClass().getResource("/view2.fxml"));
     	try {

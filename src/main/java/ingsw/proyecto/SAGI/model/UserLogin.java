@@ -24,8 +24,12 @@ public class UserLogin {
 		this.password = password;
 		this.user = user;
 	}
-	
-	
-
-	
+	public UserLogin() {
+	}
+	public boolean userValidate(String usuario, String contraseña ) {
+		if(this.user.equals(usuario) && this.password.equals(contraseña)) {
+			return true;
+		}
+		return false;
+	}
 }

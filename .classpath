@@ -35,5 +35,6 @@
 	<classpathentry kind="lib" path="src/main/resources/library/gradle-wrapper.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/library/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/library/controlsfx-8.40.15.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
