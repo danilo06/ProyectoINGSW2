@@ -6,74 +6,18 @@ import org.junit.jupiter.api.Test;
 
 class ResidenteTest {
 
+	Residente residente = new Residente();
+	
 	@Test
-	void testToString() {
-		fail("Not yet implemented");
+	public void testResidenteNumeroDocumento() {
+		
+		residente = new Residente.ResidenteBuilder().setApartamento("402").setCelular("3112541112").setEdad(0)
+				.setGenero("Hombre").setNombre("Danilo Beleño").setNumDocumento("1030123123").setTipoDocumento("CC")
+				.setTipoResidente("Propietario").setTorre("TO1").build();
+		
+		assertTrue(residente.getNumDocumento().endsWith("1030123123"));
+		
 	}
-
-	@Test
-	void testResidente() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetTipoDocumento() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetTipoDocumento() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetEdad() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetEdad() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetTipoResidente() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetTipoResidente() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetTorre() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetTorre() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetApartamento() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetApartamento() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetGenero() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetGenero() {
-		fail("Not yet implemented");
-	}
+	
 
 }
